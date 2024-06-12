@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-next",
+    "christian-kohler.path-intellisense",
+    "dbaeumer.vscode-eslint",
+    "ChakrounAnas.turbo-console-log",
+    "cschleiden.vscode-github-actions"
+  ]
+}

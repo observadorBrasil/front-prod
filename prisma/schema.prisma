@@ -1,0 +1,238 @@
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model User {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+    email     String   @unique
+    password  String
+}
+
+model Log {
+    id         Int      @id @default(autoincrement())
+    createdAt  DateTime @default(now())
+    url        String
+    statusCode Int
+    method     String
+    content    String
+}
+
+model NotaTecnica {
+    id               Int         @id @default(autoincrement())
+    createdAt        DateTime    @default(now())
+    issueDate        DateTime
+    owner            String
+    recipient        String
+    object           String
+    onusProbability  String
+    bonusProbability String
+    priority         String
+    proposition      Proposition @relation(fields: [propositionId], references: [id])
+    propositionId    Int
+}
+
+model Folder {
+    id           Int                 @id @default(autoincrement())
+    createdAt    DateTime            @default(now())
+    updatedAt    DateTime            @updatedAt
+    visible      Boolean
+    name         String
+    description  String
+    client       Client              @relation(fields: [clientId], references: [id])
+    clientId     Int
+    propositions PropositionFolder[]
+}
+
+model Client {
+    id                Int      @id @default(autoincrement())
+    createdAt         DateTime @default(now())
+    name              String
+    nickName          String
+    contractStartDate DateTime
+    logoUrl           String
+    folders           Folder[]
+}
+
+model Proposition {
+    id                  Int                 @id @default(autoincrement())
+    createdAt           DateTime            @default(now())
+    updatedAt           DateTime            @updatedAt
+    proposition         String
+    number              String
+    year                Int
+    author              String
+    presentationDate    DateTime
+    ementa              String
+    significance        String?
+    archived            Boolean             @default(false)
+    approvalProbability Float?
+    comissions          String
+    regime              String?
+    link                String              @unique
+    theme               Theme?              @relation(fields: [themeId], references: [id])
+    themeId             Int?
+    project             Project?            @relation(fields: [projectId], references: [id])
+    projectId           Int?
+    propositionType     PropositionType     @relation(fields: [propositionTypeId], references: [id])
+    propositionTypeId   Int
+    situation           Situation           @relation(fields: [situationId], references: [id])
+    situationId         Int
+    house               House               @relation(fields: [houseId], references: [id])
+    houseId             Int
+    notasTecnicas       NotaTecnica[]
+    folders             PropositionFolder[]
+    files               PropositionFile[]
+    tramitacoes         Tramitacao[]
+    searchResults       SearchResult[]
+}
+
+model Project {
+    id           Int           @id @default(autoincrement())
+    description  String        @unique
+    propositions Proposition[]
+}
+
+model Theme {
+    id           Int           @id @default(autoincrement())
+    description  String        @unique
+    propositions Proposition[]
+}
+
+model PropositionFolder {
+    id            Int         @id @default(autoincrement())
+    visible       Boolean     @default(true)
+    proposition   Proposition @relation(fields: [propositionId], references: [id])
+    propositionId Int
+    folder        Folder      @relation(fields: [folderId], references: [id])
+    folderId      Int
+}
+
+model PropositionFile {
+    id            Int         @id @default(autoincrement())
+    proposition   Proposition @relation(fields: [propositionId], references: [id])
+    propositionId Int
+    fileType      FileType    @relation(fields: [fileTypeId], references: [id])
+    fileTypeId    Int
+    files         File[]
+}
+
+model PropositionType {
+    id           Int           @id @default(autoincrement())
+    description  String        @unique
+    propositions Proposition[]
+}
+
+model Situation {
+    id           Int           @id @default(autoincrement())
+    description  String        @unique
+    propositions Proposition[]
+}
+
+model House {
+    id           Int           @id @default(autoincrement())
+    description  String        @unique
+    houseType    HouseType     @relation(fields: [houseTypeId], references: [id])
+    houseTypeId  Int
+    city         City[]
+    propositions Proposition[]
+}
+
+model File {
+    id                Int             @id @default(autoincrement())
+    createdAt         DateTime        @default(now())
+    name              String
+    extension         String
+    url               String
+    propositionFile   PropositionFile @relation(fields: [propositionFileId], references: [id])
+    propositionFileId Int
+}
+
+model Tramitacao {
+    id            Int         @id @default(autoincrement())
+    createdAt     String?
+    description   String
+    internalInfo  String?
+    link          String?
+    ambito        String?
+    proposition   Proposition @relation(fields: [propositionId], references: [id])
+    propositionId Int
+    quorum        Quorum?
+}
+
+model HouseType {
+    id          Int     @id @default(autoincrement())
+    description String  @unique
+    houses      House[]
+}
+
+model State {
+    id          Int    @id @default(autoincrement())
+    description String @unique
+    cities      City[]
+}
+
+model FileType {
+    id               Int               @id @default(autoincrement())
+    description      String            @unique
+    propositionFiles PropositionFile[]
+}
+
+model Quorum {
+    id           Int        @id @default(autoincrement())
+    description  String
+    persons      String[]
+    tramitacao   Tramitacao @relation(fields: [tramitacaoId], references: [id])
+    tramitacaoId Int        @unique
+}
+
+model City {
+    id          Int     @id @default(autoincrement())
+    description String  @unique
+    state       State   @relation(fields: [stateId], references: [id])
+    stateId     Int
+    houses      House[]
+}
+
+model Search {
+    id                Int            @id @default(autoincrement())
+    createdAt         DateTime       @default(now())
+    name              String
+    description       String?
+    advancedFormState Json
+    query             Json
+    active            Boolean        @default(true)
+    searchResult      SearchResult[]
+    notification      Notification[]
+}
+
+model SearchResult {
+    id                   Int                @id @default(autoincrement())
+    createdAt            DateTime           @default(now())
+    search               Search             @relation(fields: [searchId], references: [id])
+    searchId             Int
+    searchResultStatus   SearchResultStatus @relation(fields: [searchResultStatusId], references: [id])
+    searchResultStatusId Int                @default(1)
+    proposition          Proposition        @relation(fields: [propositionId], references: [id])
+    propositionId        Int
+}
+
+model SearchResultStatus {
+    id           Int            @id @default(autoincrement())
+    description  String
+    searchResult SearchResult[]
+}
+
+model Notification {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    read      Boolean  @default(false)
+    searchId  Int
+    search    Search   @relation(fields: [searchId], references: [id])
+}
