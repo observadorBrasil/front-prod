@@ -1,3 +1,4 @@
+import React from "react";
 import { Box, Button, Center, Flex, Text } from "@chakra-ui/react";
 import { Table as ReactTable } from "@tanstack/react-table";
 

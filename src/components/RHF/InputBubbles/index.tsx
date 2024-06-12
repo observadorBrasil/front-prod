@@ -1,3 +1,4 @@
+import React from "react";
 import { CloseOutlined } from "@ant-design/icons";
 import { HStack, Text } from "@chakra-ui/react";
 import Bubble from "../../Bubble";

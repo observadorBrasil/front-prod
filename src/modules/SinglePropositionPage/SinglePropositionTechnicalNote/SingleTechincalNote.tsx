@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import { HStack, Text } from "@chakra-ui/react";
 import { NotaTecnica } from "@prisma/client";
 import Button from "../../../components/Button";
@@ -6,7 +7,6 @@ import TextInput from "../../../components/RHF/TextInput";
 import PrioritySelect from "../../../components/Select/PrioritySelect";
 import { useForm } from "react-hook-form";
 import TextAreaInput from "@observatorio-brasil/atores/src/components/RHF/TextAreaInput";
-import { useEffect, useState } from "react";
 import { DownOutlined } from "@ant-design/icons";
 import {
   useAppDispatch,

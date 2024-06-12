@@ -1,3 +1,4 @@
+import React from 'react';
 import { SearchOutlined } from "@ant-design/icons";
 import { Center, Spinner, Stack, Text } from "@chakra-ui/react";
 import { getResultsBySearchId } from "@observatorio-brasil/atores/src/api/services/search-result";

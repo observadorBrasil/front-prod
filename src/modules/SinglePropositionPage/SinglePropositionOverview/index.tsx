@@ -1,3 +1,4 @@
+import React from "react";
 import { HStack, Text, VStack } from "@chakra-ui/react";
 import Button from "@observatorio-brasil/atores/src/components/Button";
 import { Loading } from "@observatorio-brasil/atores/src/components/Loading";

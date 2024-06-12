@@ -1,3 +1,4 @@
+import React from "react";
 import { CloseCircleOutlined } from "@ant-design/icons";
 import { Switch } from "@chakra-ui/react";
 import { ColumnDef } from "@tanstack/react-table";

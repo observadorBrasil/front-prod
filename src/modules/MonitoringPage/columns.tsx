@@ -1,3 +1,4 @@
+import React from "react";
 import { LinkOutlined, DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { ColumnDef } from "@tanstack/react-table";
 import { Search } from "@prisma/client";

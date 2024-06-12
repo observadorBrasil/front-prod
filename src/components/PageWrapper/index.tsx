@@ -1,6 +1,6 @@
+import React, { ReactNode, useEffect } from "react";
 import { Button, HStack, StackProps, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import { ReactNode, useEffect } from "react";
 import { useAppSelector } from "../../store/hooks";
 import { selectUser } from "@observatorio-brasil/atores/src/store/slices/user";
 import { LeftOutlined } from "@ant-design/icons";

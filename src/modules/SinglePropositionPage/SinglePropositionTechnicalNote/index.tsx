@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import ContentBox from "../../../components/ContentBox";
 import { NotaTecnica } from "@prisma/client";
 import { SingleTechincalNote } from "./SingleTechincalNote";
@@ -10,7 +11,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Button from "@observatorio-brasil/atores/src/components/Button";
-import { useEffect, useState } from "react";
 import Form from "@observatorio-brasil/atores/src/components/RHF/Form";
 import TextInput from "@observatorio-brasil/atores/src/components/RHF/TextInput";
 import { useForm } from "react-hook-form";

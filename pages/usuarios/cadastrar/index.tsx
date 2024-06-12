@@ -1,3 +1,4 @@
+import React from 'react';
 import { Stack, VStack, HStack, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useRouter } from "next/router";

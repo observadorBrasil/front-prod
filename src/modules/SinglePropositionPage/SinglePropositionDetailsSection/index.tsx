@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { HStack, Stack } from "@chakra-ui/react";
 import Form from "../../../components/RHF/Form";
 import { useForm } from "react-hook-form";
@@ -5,7 +6,6 @@ import EditableTextArea from "../../../components/RHF/EditableTextArea";
 import ContentBox from "../../../components/ContentBox";
 import Button from "../../../components/Button";
 import { PropositionInterface } from "../../../api/services/propositions/interfaces/proposition.interface";
-import { useEffect } from "react";
 
 interface Props {
   proposition: PropositionInterface;

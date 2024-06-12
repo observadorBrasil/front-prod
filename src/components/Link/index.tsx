@@ -1,9 +1,9 @@
+import React, { ReactNode } from "react";
 import NextLink from "next/link";
 import {
   Link as ChakraLink,
   LinkProps as ChakraLinkProps,
 } from "@chakra-ui/react";
-import React, { ReactNode } from "react";
 
 interface Props extends ChakraLinkProps {
   children?: ReactNode[] | ReactNode;

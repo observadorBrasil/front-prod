@@ -1,7 +1,7 @@
+import React, { useEffect } from "react";
 import Form from "../../../components/RHF/Form";
 import { useForm } from "react-hook-form";
 import ContentBox from "../../../components/ContentBox";
-import { useEffect } from "react";
 import { HStack } from "@chakra-ui/react";
 import SingleFileBubble from "./SingleFileBubble";
 import { PropositionFileInterface } from "../../../api/services/propositions/interfaces/proposition-file.interface";

@@ -1,3 +1,4 @@
+import React from "react";
 import { CloseOutlined } from "@ant-design/icons";
 import { HStack, StackProps, Text } from "@chakra-ui/react";
 import theme from "../../../theme";

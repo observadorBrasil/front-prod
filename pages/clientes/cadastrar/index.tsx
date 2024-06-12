@@ -1,3 +1,4 @@
+import React from 'react';
 import { HStack, Stack, Text, VStack } from "@chakra-ui/react";
 import PageWrapper from "../../../src/components/PageWrapper";
 import { useForm } from "react-hook-form";

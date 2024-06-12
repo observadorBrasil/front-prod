@@ -1,3 +1,4 @@
+import React, { ReactNode, useState } from "react";
 import {
   Box,
   Flex,
@@ -9,7 +10,6 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import React, { ReactNode, useState } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
 
 const defaultInputProps = {

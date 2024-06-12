@@ -1,3 +1,4 @@
+import React from "react";
 import { Center, HStack, Text } from "@chakra-ui/react";
 import PageWrapper from "@observatorio-brasil/atores/src/components/PageWrapper";
 import { AlertOutlined, LinkOutlined } from "@ant-design/icons";

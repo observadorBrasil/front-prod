@@ -1,8 +1,8 @@
+import React, { useEffect, useState } from "react";
 import { EditOutlined } from "@ant-design/icons";
 import { HStack, Text, VStack } from "@chakra-ui/react";
 import Form from "../../../components/RHF/Form";
 import TextInput from "../../../components/RHF/TextInput";
-import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import theme from "../../../theme";
 import TextAreaInput from "../../../components/RHF/TextAreaInput";

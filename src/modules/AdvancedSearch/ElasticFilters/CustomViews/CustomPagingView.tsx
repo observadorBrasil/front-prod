@@ -1,5 +1,5 @@
-import { PagingInfoViewProps } from "@elastic/react-search-ui-views";
 import React from "react";
+import { PagingInfoViewProps } from "@elastic/react-search-ui-views";
 
 export const CustomPagingView = ({
   start,

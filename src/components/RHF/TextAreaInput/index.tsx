@@ -1,3 +1,4 @@
+import React, { ReactNode } from "react";
 import {
   Flex,
   FormControl,
@@ -6,7 +7,6 @@ import {
   Textarea,
   TextareaProps,
 } from "@chakra-ui/react";
-import { ReactNode } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
 
 interface Props {

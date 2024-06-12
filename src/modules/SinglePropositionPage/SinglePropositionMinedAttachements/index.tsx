@@ -1,3 +1,4 @@
+import React from "react";
 import ContentBox from "../../../components/ContentBox";
 import SingleMinedAttachment from "./SingleMinedAttachement";
 

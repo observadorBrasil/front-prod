@@ -1,5 +1,5 @@
+import React, { ReactNode } from "react";
 import { Flex } from "@chakra-ui/react";
-import { ReactNode } from "react";
 
 interface Props {
   children: ReactNode | ReactNode[];

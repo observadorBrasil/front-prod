@@ -1,3 +1,4 @@
+import React from "react";
 import { HStack, Text, VStack } from "@chakra-ui/react";
 import { getHouses } from "@observatorio-brasil/atores/src/api/services/houses";
 import {

@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, FormHTMLAttributes, ReactNode } from "react";
+import React, { DetailedHTMLProps, FormHTMLAttributes, ReactNode } from "react";
 
 interface Props {
   children: ReactNode | ReactNode[];

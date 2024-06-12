@@ -1,3 +1,4 @@
+import React from "react";
 import { Divider, HStack, VStack } from "@chakra-ui/react";
 import { Step } from "./interfaces";
 import SingleStep from "./SingleStep";

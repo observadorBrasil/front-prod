@@ -1,3 +1,4 @@
+import React from 'react';
 import { Center, HStack, Text, VStack } from "@chakra-ui/react";
 import { getActiveSearches } from "@observatorio-brasil/atores/src/api/services/search";
 import Button from "@observatorio-brasil/atores/src/components/Button";

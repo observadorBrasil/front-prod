@@ -1,3 +1,4 @@
+import React from "react";
 import { LinkOutlined, DeleteOutlined } from "@ant-design/icons";
 import { Badge, Tooltip } from "@chakra-ui/react";
 import { ColumnDef } from "@tanstack/react-table";

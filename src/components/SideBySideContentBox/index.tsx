@@ -1,5 +1,5 @@
+import React, { ReactNode } from "react";
 import { HStack, Stack, StackProps, VStack } from "@chakra-ui/react";
-import { ReactNode } from "react";
 
 interface Props {
   sideChildren: ReactNode | ReactNode[];

@@ -1,9 +1,9 @@
+import React from "react";
 import {
   CheckboxGroupProps,
   Checkbox as ChakraCheckbox,
   CheckboxGroup as ChakraCheckboxGroup,
 } from "@chakra-ui/react";
-import React from "react";
 import { Control, Controller } from "react-hook-form";
 
 interface Checkbox {

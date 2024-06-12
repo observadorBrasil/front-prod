@@ -1,3 +1,4 @@
+import React from "react";
 import { useCallback, useEffect, useState } from "react";
 import { HStack, Text, VStack, Box, Select } from "@chakra-ui/react";
 import ElasticFilters from "@observatorio-brasil/atores/src/modules/AdvancedSearch/ElasticFilters";

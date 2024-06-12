@@ -1,3 +1,4 @@
+import React from 'react';
 import { Center, Stack, Text } from "@chakra-ui/react";
 import { getAllUsers } from "@observatorio-brasil/atores/src/api/services/user";
 import { UserInterface } from "@observatorio-brasil/atores/src/api/services/user/interfaces/user.interface";

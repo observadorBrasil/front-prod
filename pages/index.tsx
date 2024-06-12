@@ -1,3 +1,4 @@
+import React from 'react';
 import NotificationsPage from "../src/modules/NotificationsPage";
 
 // https://github.com/nrwl/nx/issues/9017#issuecomment-1180462040

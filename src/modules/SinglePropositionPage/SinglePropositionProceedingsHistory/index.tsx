@@ -1,5 +1,5 @@
-import { Divider } from "@chakra-ui/react";
 import React from "react";
+import { Divider } from "@chakra-ui/react";
 import { TramitacaoInterface } from "../../../api/services/tramitacao/interfaces/tramitacao.interface";
 import ContentBox from "../../../components/ContentBox";
 import SingleProceeding from "./SingleProceeding";

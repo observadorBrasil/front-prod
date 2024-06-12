@@ -1,3 +1,4 @@
+import React from "react";
 import { HStack, VStack, Text, Button } from "@chakra-ui/react";
 import {
   createSearch,

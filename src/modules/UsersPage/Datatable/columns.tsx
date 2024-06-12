@@ -1,3 +1,4 @@
+import React from "react";
 import { DeleteOutlined } from "@ant-design/icons";
 import { ColumnDef } from "@tanstack/react-table";
 import { UserInterface } from "@observatorio-brasil/atores/src/api/services/user/interfaces/user.interface";

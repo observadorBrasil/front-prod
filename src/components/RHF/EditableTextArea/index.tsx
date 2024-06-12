@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import { EditOutlined } from "@ant-design/icons";
 import {
   FormControl,
@@ -10,7 +11,6 @@ import {
   TextProps,
   VStack,
 } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
 import theme from "../../../theme";
 import { UseFormRegisterReturn } from "react-hook-form";
 

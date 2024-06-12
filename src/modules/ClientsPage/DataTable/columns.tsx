@@ -1,3 +1,4 @@
+import React from "react";
 import { ColumnDef } from "@tanstack/react-table";
 import { CloseOutlined, LinkOutlined } from "@ant-design/icons";
 import Link from "@observatorio-brasil/atores/src/components/Link";
