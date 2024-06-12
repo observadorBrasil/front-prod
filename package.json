@@ -15,6 +15,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@chakra-ui/react": "^2.5.3",
+    "@elastic/elasticsearch": "8.13.1",
     "@elastic/react-search-ui": "^1.17.1",
     "@elastic/react-search-ui-views": "^1.17.1",
     "@elastic/search-ui": "^1.17.1",
