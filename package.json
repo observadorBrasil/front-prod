@@ -12,6 +12,9 @@
     "prisma:generate": "npx prisma generate",
     "docker:build": "docker build . -t observatorio-brasil/monitoramento-front"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@chakra-ui/react": "^2.5.3",
