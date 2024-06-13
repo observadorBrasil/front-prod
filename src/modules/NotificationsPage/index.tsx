@@ -30,6 +30,7 @@ export default function NotificationsPage() {
       <HStack w={"full"} justify={"flex-start"} align={"center"} pb={5}>
         <Text fontWeight={"semibold"} fontSize={"2xl"}>
           Avisos
+          {/* coment */}
         </Text>
       </HStack>
       {loading && (
