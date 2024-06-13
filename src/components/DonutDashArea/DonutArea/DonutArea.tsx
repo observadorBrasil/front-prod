@@ -22,12 +22,12 @@ type StatusCount = {
   [key: string]: number
 }
 
-export default function DonutArea({
+const DonutArea =({
   handleGetPl,
   selectedFolder,
   searches,
   actionLoading,
-}: DonutAreaProps) {
+}: DonutAreaProps) => {
   return (
     <div className="mt-5 mb-5 relative">
       <Select
@@ -86,3 +86,5 @@ export default function DonutArea({
     </div>
   )
 }
+
+export default React.memo(DonutArea)

@@ -49,6 +49,8 @@ export default function DashboardPage() {
   const { searches } = useSelector(selectSearch)
   console.log('searches', searches)
   const [actionLoading, setActionLoading] = useState(false)
+  const [donutOne, setDonutOne] = useState(false)
+  const [donutTwo, setDonutTwo] = useState(false)
   const [columns, setColumns] = useState<Array<any>>([])
   // const [columnsPropositions, setColumnsPropositions] = useState<Array<any>>([])
   const toast = useToast()
@@ -210,7 +212,7 @@ export default function DashboardPage() {
 
   const handleGetPlOne = async (id: number, label: string) => {
     try {
-      setActionLoading(true)
+      setDonutOne(true)
       const results = await getResultsBySearchId(+id, '')
       if (results.data) {
         setSelectedFolderOne({
@@ -220,13 +222,13 @@ export default function DashboardPage() {
         })
       }
     } finally {
-      setActionLoading(false)
+      setDonutOne(false)
     }
   }
 
   const handleGetPlTwo = async (id: number, label: string) => {
     try {
-      setActionLoading(true)
+      setDonutTwo(true)
       const results = await getResultsBySearchId(+id, '')
       if (results.data) {
         setSelectedFolderTwo({
@@ -236,7 +238,7 @@ export default function DashboardPage() {
         })
       }
     } finally {
-      setActionLoading(false)
+      setDonutTwo(false)
     }
   }
 
@@ -480,14 +482,14 @@ export default function DashboardPage() {
             <div className="bg-white pb-6 h-[340px] w-full rounded-xl flex justify-around">
               <DonutArea
                 searches={searches}
-                actionLoading={actionLoading}
+                actionLoading={donutOne}
                 handleGetPl={handleGetPlOne}
                 selectedFolder={selectedFolderOne}
               />
 
               <DonutArea
                 searches={searches}
-                actionLoading={actionLoading}
+                actionLoading={donutTwo}
                 handleGetPl={handleGetPlTwo}
                 selectedFolder={selectedFolderTwo}
               />

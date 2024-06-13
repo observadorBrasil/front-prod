@@ -58,16 +58,16 @@ const PageWrapper = (props: Props) => {
 
   return (
      <section
-      className={`${!isLoginPage ? 'bg-aditional-background-color' : null}`}
+      className={`${!isLoginPage ? 'wrapperSection bg-aditional-background-color pt-4 lg:pt-0 h-screen' : null}`}
     >
-      <div className={`${!isLoginPage ? 'lg:flex' : null}`}>
+      <div className={`${!isLoginPage ? 'wrapperDivOne lg:flex' : null}`}>
         {userState.user && <Navbar />}
         <div
-          className={`${!isLoginPage ? 'mx-3 lg:ml-0 lg:w-full mt-3 lg:mr-3' : null} `}
+          className={`${!isLoginPage ? 'wrapperDivTwo mx-3 lg:ml-0 lg:w-full mt-0 lg:mt-3 lg:mr-3' : null} `}
         >
           {userState.user && <Header />}
           <VStack
-            className={`${!isLoginPage ? `mt-3 pt-4 pb-4 w-full items-center rounded-xl ${!isDashboardPage ? 'bg-white px-4 lg:px-6 overflow-auto min-h-screen max-h-screen lg:min-h-[838px] lg:max-h-[838px]' : 'px-0 lg:px-0 lg:mt-0'}` : null}`}
+            className={`${!isLoginPage ? `mt-3 pt-4 pb-4 w-full items-center rounded-xl ${!isDashboardPage ? 'bg-white px-4 lg:px-6 overflow-auto min-h-screen max-h-screen lg:min-h-[838px] lg:max-h-[838px]' : 'vstack px-0 lg:px-0 lg:mt-0'}` : null}`}
             {...props.containerProps}
           >
             {presentGoBack && (

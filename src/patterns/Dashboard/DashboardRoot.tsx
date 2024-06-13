@@ -6,7 +6,7 @@ interface DashboardRootProps {
 
 export default function DashboardRoot({ children }: DashboardRootProps) {
   return (
-    <section className="dashSection w-full overflow-auto max-h-[830px]">
+    <section className="dashSection w-full overflow-auto max-h-[830px] pb-4">
       {children}
     </section>
   )

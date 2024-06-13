@@ -1,139 +1,182 @@
-import React from "react";
+import React, { useEffect, useState, useCallback } from 'react'
 import {
   Button,
-  Center,
-  HStack,
-  List,
-  Text,
-  useMediaQuery,
+  InputGroup,
+  InputLeftElement,
   useToast,
-} from "@chakra-ui/react";
-import { SearchOutlined } from "@ant-design/icons";
-import { useForm } from "react-hook-form";
-import { useDebounce } from "@observatorio-brasil/atores/src/hooks/useDebounce";
-import { useState, useCallback, useEffect } from "react";
-import { useRouter } from "next/router";
-import FolderCard from "@observatorio-brasil/atores/src/components/FolderCard";
-import PageWrapper from "@observatorio-brasil/atores/src/components/PageWrapper";
-import Form from "@observatorio-brasil/atores/src/components/RHF/Form";
-import TextInput from "@observatorio-brasil/atores/src/components/RHF/TextInput";
-import theme from "@observatorio-brasil/atores/src/theme";
-import { searchFolderByName } from "@observatorio-brasil/atores/src/api/services/folders";
-import { Client, Folder } from "@prisma/client";
-import { getClientById } from "@observatorio-brasil/atores/src/api/services/clients";
-import { Loading } from "@observatorio-brasil/atores/src/components/Loading";
+} from '@chakra-ui/react'
+import { useForm } from 'react-hook-form'
+import { useDebounce } from '../../../../src/hooks/useDebounce'
+
+import { useRouter } from 'next/router'
+import FolderCard from '../../../../src/components/FolderCard'
+import PageWrapper from '../../../../src/components/PageWrapper'
+import { searchFolderByName } from '../../../../src/api/services/folders'
+import { Client, Folder } from '@prisma/client'
+import { getClientById } from '../../../../src/api/services/clients'
+import { Loading } from '../../../../src/components/Loading'
+import { HistoryItem } from '../../../../src/modules/RouteHistory'
+import ChakraInput from '../../../../src/components/CrakraInput/ChakraInput'
+import { FaSearch } from 'react-icons/fa'
+import FolderActionModal from '../../../../src/components/Modal/Client/FoulderActionModal/FolderActionModal'
+import { useDispatch, useSelector } from 'react-redux'
+import {
+  onClose,
+  onOpen,
+} from '../../../../src/store/slices/clientFolderModal/index'
+import FolderDeleteModal from '../../../../src/components/Modal/Client/FolderDeleteModal/FolderDeleteModal'
+import { FolderActions } from '../../../../src/store/slices/folder'
 
 const defaultValues = {
-  search: "",
-};
+  search: '',
+}
 
 export default function ClientFoldersPage() {
-  const { register, watch } = useForm({ defaultValues });
-  const router = useRouter();
-  const { clientId } = router.query;
-  const toast = useToast();
+  const { register, watch } = useForm({ defaultValues })
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { folders } = useSelector((state: any) => state.folder)
+  const router = useRouter()
+  const { clientId } = router.query
+  const toast = useToast()
 
-  const searchValue = watch("search");
-  const debouncedSearch = useDebounce(searchValue);
+  const dispatch = useDispatch()
 
-  const [client, setClient] = useState<Client | undefined>(undefined);
-  const [folders, setFolders] = useState<Folder[]>([]);
-  const [isLargerThan450] = useMediaQuery("(min-width: 450px)");
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const searchValue = watch('search')
+  const debouncedSearch = useDebounce(searchValue)
+
+  const [client, setClient] = useState<Client | undefined>(undefined)
+  const [isLoading, setIsLoading] = useState<boolean>(true)
 
   const handleSearch = useCallback(async () => {
     try {
-      const id = clientId!.toString();
-      const results = await searchFolderByName(+id, debouncedSearch);
+      const id = clientId!.toString()
+      const results = await searchFolderByName(+id, debouncedSearch)
       if (results.data) {
-        setFolders(results.data);
-        setIsLoading(false);
+        dispatch(FolderActions.searchFolders({ folders: results.data }))
+        setIsLoading(false)
       }
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (e: any) {
-      toast({ status: "error", description: e?.message });
+      toast({ status: 'error', description: e?.message })
     } finally {
-      setIsLoading(false);
+      setIsLoading(false)
     }
-  }, [clientId, debouncedSearch]);
+  }, [clientId, debouncedSearch])
 
   const fetchClient = useCallback(async () => {
-    const id = clientId!.toString();
-    const result = await getClientById(id);
+    const id = clientId!.toString()
+    const result = await getClientById(id)
     if (result.data) {
-      setClient(result.data);
+      setClient(result.data)
     }
-  }, [clientId]);
+  }, [clientId])
 
-  const redirectToCreateFolder = () => {
-    router.push(`/clientes/${clientId?.toString()}/pastas/cadastrar`);
-  };
+  // const redirectToCreateFolder = () => {
+  //   router.push(`/clientes/${clientId?.toString()}/pastas/cadastrar`)
+  // }
+
+  useEffect(() => {
+    dispatch(onClose())
+  }, [])
 
   useEffect(() => {
     if (clientId) {
-      handleSearch();
+      handleSearch()
     }
-  }, [clientId, debouncedSearch, handleSearch]);
+  }, [clientId, debouncedSearch, handleSearch])
 
   useEffect(() => {
     if (clientId) {
-      fetchClient();
+      fetchClient()
     }
-  }, [clientId, fetchClient]);
+  }, [clientId, fetchClient])
+
+  // const RouteHistory = () => {
+  //   return (
+  //     <Breadcrumb>
+  //       <BreadcrumbItem>
+  //         <BreadcrumbLink href="/clientes">Clientes</BreadcrumbLink>
+  //       </BreadcrumbItem>
+
+  //       <BreadcrumbItem>
+  //         <BreadcrumbLink isCurrentPage>{client?.nickName}</BreadcrumbLink>
+  //       </BreadcrumbItem>
+  //     </Breadcrumb>
+  //   )
+  // }
+
+  const routeHistory: HistoryItem[] = [
+    { label: 'Clientes', url: '/clientes', isCurrentPage: false },
+    { label: client?.nickName, url: '#', isCurrentPage: true },
+  ]
 
   return (
-    <PageWrapper presentGoBack restricted>
-      <HStack w={"full"} align={"flex-start"} justify={"flex-start"}>
-        <Text fontSize={"2xl"} fontWeight={"semibold"}>
-          Pastas de {client?.nickName}
-        </Text>
-      </HStack>
-      <HStack w={"full"} align={"baseline"} justify={"flex-start"} spacing={12}>
-        <Form>
-          <TextInput
-            rhfregister={register("search")}
-            id={"folders_search"}
-            type={"text"}
-            icon={
-              <SearchOutlined
-                style={{
-                  borderColor: theme.colors.primary,
-                  fontSize: "25px",
-                }}
-              />
-            }
-            placeholder={"Buscar pasta..."}
-          />
-        </Form>
-        <Button
-          onClick={redirectToCreateFolder}
-          borderWidth={1}
-          borderColor={"primary"}
-          backgroundColor={"transparent"}
-          fontSize={"sm"}
-          h={"100%"}
-          px={10}
-          py={"4px"}
-        >
-          {isLargerThan450 ? "Cadastrar nova pasta" : "+ pasta"}
-        </Button>
-      </HStack>
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <List w={"100%"} spacing={6}>
-          {!folders?.length && !isLoading && (
-            <Center w={"100%"}>Nenhuma pasta cadastrada</Center>
-          )}
-          {folders?.map((f) => (
-            <FolderCard
-              key={f.id}
-              folder={f}
-              clientId={clientId!.toString()}
-              refresh={handleSearch}
+    <PageWrapper restricted>
+      <section className="flex flex-col w-full">
+        <div className="flex w-full justify-between">
+          <InputGroup className="max-w-60 md:max-w-72 lg:max-w-80">
+            <InputLeftElement pointerEvents="none">
+              <FaSearch color="#B3B3B3" />
+            </InputLeftElement>
+            <ChakraInput
+              rhfregister={register('search')}
+              id={'folders_search'}
+              type={'text'}
+              placeholder="Pesquise aqui"
+              paddingLeft={'2.5rem'}
+              backgroundColor={'#EDEDED'}
             />
-          ))}
-        </List>
-      )}
+          </InputGroup>
+          <Button
+            onClick={() =>
+              dispatch(
+                onOpen({
+                  clientId,
+                  isOpen: true,
+                  isCreate: true,
+                  folderId: '',
+                }),
+              )
+            }
+            className="ml-auto"
+            backgroundColor={'#131931'}
+            color={'secondary'}
+            variant={'solid'}
+            type={'submit'}
+            _hover={{
+              backgroundColor: '#31437E', // Cor de fundo no hover
+              color: 'secondary', // Cor do texto no hover, se necessário
+            }}
+          >
+            Criar nova Pasta
+          </Button>
+        </div>
+
+        <div className="mt-9">
+          {isLoading ? (
+            <Loading />
+          ) : (
+            <div>
+              {!folders.length && !isLoading ? (
+                <div>Nenhuma pasta cadastrada</div>
+              ) : (
+                folders.map((item: Folder) => {
+                  return (
+                    <FolderCard
+                      key={item.id}
+                      clientId={item.id.toString()}
+                      folder={item}
+                      refresh={handleSearch}
+                    />
+                  )
+                })
+              )}
+            </div>
+          )}
+        </div>
+      </section>
+      <FolderActionModal />
+      <FolderDeleteModal />
     </PageWrapper>
-  );
+  )
 }

@@ -14,8 +14,12 @@ import tramitacao from "./tramitacao";
 import search from "./search";
 import searchResult from "./search-result";
 import notification from "./notification";
+import { clientFolderModal } from "./clientFolderModal";
+import { clientFolderDeleteModal } from './clientFolderDeleteModal/index'
 
 const rootReducer = combineReducers({
+  clientFolderModal,
+  clientFolderDeleteModal,
   user,
   simpleSearchForm,
   advancedSearchForm,
