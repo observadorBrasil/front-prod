@@ -1,3 +1,4 @@
+import React from "react";
 import { useAppDispatch } from "@observatorio-brasil/atores/src/store/hooks";
 import { NotificationActions } from "@observatorio-brasil/atores/src/store/slices/notification";
 import { useEffect, useCallback } from "react";
