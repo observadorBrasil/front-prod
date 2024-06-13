@@ -1,34 +1,40 @@
-import React from 'react';
-import {
-  Button,
-  Flex,
-  Heading,
-  Stack,
-  Center,
-  Divider,
-  VStack,
-} from "@chakra-ui/react";
-import Image from "next/image";
-import TextInput from "../src/components/RHF/TextInput";
-import { useEffect } from "react";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { useAppDispatch, useAppSelector } from "../src/store/hooks";
-import { selectUser, UserActions } from "../src/store/slices/user";
-import PageWrapper from "../src/components/PageWrapper";
-import { useRouter } from "next/router";
-import { useForm } from "react-hook-form";
-import Form from "../src/components/RHF/Form";
+import React, { useEffect } from 'react'
+import styles from './login.module.css'
+
+import Image from 'next/image'
+// import IncompleteLogo from '../src/assets/incompleteLogo.svg'
+import NewLogo from '../public/images/newlogo-removebg-preview.png'
+
+import { useAppSelector } from '../src/store/hooks'
+import { selectUser } from '../src/store/slices/user'
+import PageWrapper from '../src/components/PageWrapper'
+import { useRouter } from 'next/router'
+
+// import { useAuth } from '../src/context/auth'
+import LoginForm from '../src/modules/LoginForm/LoginForm'
+
+// cleid:A= Exemplo-New-Way-01
 
 export default function LoginPage() {
-  const dispatch = useAppDispatch();
-  const userState = useAppSelector(selectUser);
-  const router = useRouter();
+  const userState = useAppSelector(selectUser)
+  const router = useRouter()
+//   const { getAuthUserByEmail } = useAuth()
 
-  useEffect(() => {
-    if (userState.user) router.push("/");
-  }, [userState, router]);
+  // useEffect(() => {
+  //   if (userState.user) {
+  //     getAuthUserById(userState.user.id)
 
-  const { register, handleSubmit } = useForm();
+  //     router.push('/')
+  //   }
+  // }, [userState, router])
+
+//   useEffect(() => {
+//     if (userState.user) {
+//       getAuthUserByEmail(userState.user.email)
+
+//       router.push('/')
+//     }
+//   }, [userState, router])
 
   return (
     <PageWrapper
@@ -36,117 +42,28 @@ export default function LoginPage() {
         pl: 0,
         pr: 0,
         pt: 0,
-        h: "100vh",
+        h: '100vh',
+        w: '100vh'
       }}
     >
-      <Center h={"100%"} width={"100%"} backgroundColor={"primary"}>
-        <Stack
-          minH={{ md: "60vh", base: "80vh" }}
-          width={{ base: "90%", xl: "70%" }}
-          direction={{ base: "column", md: "row" }}
-          backgroundColor={"secondary"}
-          borderRadius={"10px"}
+      <div className="w-full h-screen flex">
+        <div
+          className={`${styles.styleLoginBgImageArea} hidden md:w-1/2 md:flex items-center justify-center w-full`}
         >
-          <Flex flex={1} align={"center"} justify={"center"}>
+          <div className="relative w-full h-full flex flex-col items-center justify-center">
             <Image
-              alt={"MB Logo"}
-              objectFit={"contain"}
-              width={458}
-              height={458 / 3.132}
-              src={"/images/observatorio_brasil_logo.png"}
+              src={NewLogo}
+              alt="logo observatório brasil"
+              className="min-w-[380px] w-[36%] mb-40 hidden md:block lg:block"
             />
-          </Flex>
-          <Center
-            display={{ base: "none", md: "flex" }}
-            paddingTop={"5%"}
-            paddingBottom={"5%"}
-          >
-            <Divider
-              orientation="vertical"
-              borderWidth={"1px"}
-              borderColor={"primary"}
-            />
-          </Center>
-          <VStack
-            p={{ base: 6, md: 8 }}
-            pt={{ base: 8, md: 16 }}
-            pb={{ base: 8, md: 16 }}
-            align={"center"}
-            justify={"space-between"}
-            flex={1}
-          >
-            <Form
-              onSubmit={handleSubmit((v) =>
-                dispatch(
-                  UserActions.requestUserLogin({
-                    username: v.email,
-                    password: v.password,
-                  })
-                )
-              )}
-              style={{
-                display: "flex",
-                flexWrap: "nowrap",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "space-between",
-                width: "100%",
-                height: "100%",
-                gap: 24,
-              }}
-            >
-              <Heading
-                fontSize={"2xl"}
-                fontWeight={"normal"}
-                color={"primary"}
-                mb={8}
-              >
-                Login
-              </Heading>
-              <Flex
-                w={{ base: "90%", xl: "60%" }}
-                direction={"column"}
-                align={"center"}
-                justify={"center"}
-              >
-                <TextInput
-                  rhfregister={register("email")}
-                  id={"email"}
-                  type={"email"}
-                  placeholder="Email"
-                  icon={<UserOutlined />}
-                  containerProps={{ width: "full" }}
-                />
-                <TextInput
-                  rhfregister={register("password")}
-                  id={"password"}
-                  type={"password"}
-                  placeholder="Senha"
-                  icon={<LockOutlined />}
-                  containerProps={{ width: "full" }}
-                />
-              </Flex>
-              <Stack
-                direction={"column"}
-                align={"center"}
-                justify={"space-between"}
-                w={"full"}
-                mt={{ base: 8 }}
-              >
-                <Button
-                  backgroundColor={"primary"}
-                  color={"secondary"}
-                  variant={"solid"}
-                  w={{ md: "50%", base: "60%" }}
-                  type={"submit"}
-                >
-                  Entrar
-                </Button>
-              </Stack>
-            </Form>
-          </VStack>
-        </Stack>
-      </Center>
+
+            <span className="text-white text-lg absolute hidden md:bottom-2 md:block ">
+              © Todos os direitos reservados
+            </span>
+          </div>
+        </div>
+        {/* <LoginForm /> */}
+      </div>
     </PageWrapper>
-  );
+  )
 }

@@ -1,0 +1,34 @@
+.styleLoginBgImageArea {
+    background-image: url('../public/images/background.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.styleLoginBgImageArea::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(19, 25, 49, 0.671); /* Cor #131931 com 50% de opacidade */
+    z-index: 1;
+}
+
+.styleLoginBgImageArea > * {
+    position: relative;
+    z-index: 2;
+}
+
+@media(max-width: 768px) {
+   .styleLoginBgImageArea::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(9, 25, 49, 0.774); /* Cor #091931 com 50% de opacidade */
+    z-index: 1;
+} 
+}
