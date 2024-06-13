@@ -1,76 +1,61 @@
-import React from "react";
+import React, { ReactNode } from 'react'
+import { IoPeople, IoSearch } from 'react-icons/io5'
+import { MdDashboard, MdPerson } from 'react-icons/md'
+import { TbHeartRateMonitor } from 'react-icons/tb'
+
 export interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
+  label: string
+  subLabel?: string
+  children?: Array<NavItem>
+  href?: string
+  icon?: ReactNode
 }
 
 const routes: Array<NavItem> = [
   {
-    label: "Clientes",
-    href: "/clientes",
+    label: 'Dashboard',
+    href: '/',
+    icon: <MdDashboard />,
+  },
+  {
+    label: 'Clientes',
+    href: '/clientes',
+    icon: <IoPeople />,
+    // children: [
+    //   {
+    //     label: 'Cadastrar',
+    //     subLabel: 'Cadastrar novo cliente',
+    //     href: '/clientes/cadastrar',
+    //   },
+    // ],
+  },
+  {
+    label: 'Busca',
+    href: '/busca/simples',
+    icon: <IoSearch />,
     children: [
       {
-        label: "Visualizar",
-        subLabel: "Ver clientes",
-        href: "/clientes",
+        label: 'Avançada',
+        subLabel: 'Realiza busca com filtros avançados',
+        href: '/busca/avancada',
       },
       {
-        label: "Cadastrar",
-        subLabel: "Cadastrar um novo cliente",
-        href: "/clientes/cadastrar",
+        label: 'Simples',
+        subLabel: 'Realiza busca com filtros simples',
+        href: '/busca/simples',
       },
     ],
   },
   {
-    label: "Busca",
-    href: "/busca/simples",
-    children: [
-      {
-        label: "Avançada",
-        subLabel: "Realiza busca com filtros avançados",
-        href: "/busca/avancada",
-      },
-      {
-        label: "Simples",
-        subLabel: "Realiza busca com filtros simples",
-        href: "/busca/simples",
-      },
-    ],
+    label: 'Monitoramento',
+    href: '/monitoramento',
+    icon: <TbHeartRateMonitor />,
   },
   {
-    label: "Monitoramento",
-    href: "/monitoramento",
-    children: [
-      {
-        label: "Visualizar Filtros",
-        subLabel: "Ver e editar filtros cadastrados",
-        href: "/monitoramento",
-      },
-      {
-        label: "Monitoramento",
-        subLabel: "Criar filtros recorrentes para monitoramento",
-        href: "/monitoramento/cadastrar",
-      },
-    ],
+    label: 'Usuários',
+    href: '/usuarios',
+    icon: <MdPerson />,
   },
-  {
-    label: "Usuários",
-    href: "/usuarios",
-    children: [
-      {
-        label: "Visualizar",
-        subLabel: "Visualizar usuários cadastrados",
-        href: "/usuarios",
-      },
-      {
-        label: "Cadastrar",
-        subLabel: "Cadastrar usuário",
-        href: "/usuarios/cadastrar",
-      },
-    ],
-  },
-];
+]
 
-export default routes;
+export default routes

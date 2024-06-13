@@ -4,7 +4,7 @@
     background-size: cover;
 }
 
-.styleLoginBgImageArea::before {
+/* .styleLoginBgImageArea::before {
     content: '';
     position: absolute;
     top: 0;
@@ -12,8 +12,8 @@
     width: 50%;
     height: 100%;
     background-color: rgba(19, 25, 49, 0.671); /* Cor #131931 com 50% de opacidade */
-    z-index: 1;
-}
+    /* z-index: 1; */
+/* } */
 
 .styleLoginBgImageArea > * {
     position: relative;

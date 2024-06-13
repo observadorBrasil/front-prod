@@ -62,7 +62,7 @@ export default function LoginPage() {
             </span>
           </div>
         </div>
-        {/* <LoginForm /> */}
+        <LoginForm />
       </div>
     </PageWrapper>
   )
