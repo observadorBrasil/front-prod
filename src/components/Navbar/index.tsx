@@ -5,6 +5,7 @@ import React, {
   useMemo,
   useState,
 } from 'react'
+import styled from './navbar.module.css'
 import {
   Box,
   Flex,
@@ -65,7 +66,7 @@ const DesktopNav = () => {
   }, [router.pathname])
 
   return (
-    <div className="relative w-64 mt-2 mx-3 h-[98vh] bg-primary-blue-1100 rounded-xl flex items-center justify-center p-6">
+    <div className={`${styled.navbar} relative w-64 mt-2 mx-3 h-[98vh] bg-primary-blue-1100 rounded-xl flex items-center justify-center p-6`}>
       <div className="w-full h-full">
         <div className="flex flex-col w-full items-center">
           <h3 className="text-white text-xl font-bold">Observador</h3>
@@ -106,11 +107,11 @@ const DesktopNav = () => {
           ))}
         </div>
       </div>
-      <Image
-        src={BgImageNavbar} // Certifique-se de que o caminho da imagem está correto
+      {/* <Image
+        src={BgImageNavbar}
         alt="imagem de um binóculo"
         className="absolute bottom-56 right-0"
-      />
+      /> */}
     </div>
   )
 }

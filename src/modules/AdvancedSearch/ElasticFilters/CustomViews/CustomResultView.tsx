@@ -9,6 +9,8 @@ interface CustomResultViewProps {
   isLoading?: boolean;
 }
 
+// result here
+
 export const CustomResultView = ({
   results,
   isLoading,

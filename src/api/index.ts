@@ -20,13 +20,16 @@ export class ApiRepository {
   private createApiInstance(baseUrl: string) {
     const baseApiUrl: string | undefined =
       //   process.env.NEXT_PUBLIC_MONITORING_DEVELOPMENT_API_URL
-      process.env.NEXT_PUBLIC_MONITORING_API_URL
+    process.env.NEXT_PUBLIC_MONITORING_API_URL
+    // 'https://observador-api-new.azurewebsites.net/api'
 
     const url: string = baseApiUrl
       ? `${baseApiUrl}${baseUrl}`
       : // process.env.NODE_ENV === "development" ?
         // `http://localhost:5001/api${baseUrl}` :
-        `https://monitoring-proposition-api.azurewebsites.net/api${baseUrl}`
+      `https://monitoring-proposition-api.azurewebsites.net/api${baseUrl}`
+      // `https://observador-api-new.azurewebsites.net/api${baseUrl}`
+    
 
     const api = Axios.create({
       baseURL: url,

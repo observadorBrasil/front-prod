@@ -36,6 +36,8 @@ export default function ElasticFilters({ config }: ElasticFiltersProps) {
         })}
       >
         {({ wasSearched, isLoading, results }) => {
+          console.log('results', results)
+          console.log('wasSearched', wasSearched)
           return (
             <ErrorBoundary>
               <Layout
