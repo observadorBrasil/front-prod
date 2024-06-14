@@ -4,7 +4,7 @@ import { NotificationActions } from "../../slices/notification";
 import {
   getActiveNotifications,
   markNotificationAsRead,
-} from "@observatorio-brasil/atores/src/api/services/notifications";
+} from "../../../../src/api/services/notifications";
 
 function* getNotificationsSaga(): SagaIterator {
   const res = yield call(getActiveNotifications);

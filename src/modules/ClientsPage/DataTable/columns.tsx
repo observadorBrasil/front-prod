@@ -1,18 +1,18 @@
 import React from "react";
 import { ColumnDef } from "@tanstack/react-table";
 import { CloseOutlined, LinkOutlined } from "@ant-design/icons";
-import Link from "@observatorio-brasil/atores/src/components/Link";
-import { Loading } from "@observatorio-brasil/atores/src/components/Loading";
+import Link from "../../../../src/components/Link";
+import { Loading } from "../../../../src/components/Loading";
 import {
   PropositionFolderActions,
   selectPropositionFolder,
-} from "@observatorio-brasil/atores/src/store/slices/proposition/proposition-folder";
+} from "../../../../src/store/slices/proposition/proposition-folder";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
-import { FolderWithClientAndPropositions } from "@observatorio-brasil/atores/prisma/interfaces/folder";
-import { formatDate } from "@observatorio-brasil/atores/src/utils/date";
+} from "../../../../src/store/hooks";
+import { FolderWithClientAndPropositions } from "../../../../prisma/interfaces/folder";
+import { formatDate } from "../../../../src/utils/date";
 import { Tooltip } from "@chakra-ui/react";
 
 export const useClientPropositionsColumns = () => {

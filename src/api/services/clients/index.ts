@@ -1,4 +1,4 @@
-import { ClientWithFolder } from "@observatorio-brasil/atores/prisma/interfaces/client";
+import { ClientWithFolder } from "../../../../prisma/interfaces/client";
 import { ApiRepository } from "../..";
 import { ClientInterface } from "./interfaces/client.interface";
 

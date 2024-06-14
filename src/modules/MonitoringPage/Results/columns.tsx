@@ -2,17 +2,17 @@ import React from "react";
 import { LinkOutlined, DeleteOutlined } from "@ant-design/icons";
 import { Badge, Tooltip } from "@chakra-ui/react";
 import { ColumnDef } from "@tanstack/react-table";
-import { formatDate } from "@observatorio-brasil/atores/src/utils/date";
-import { SearchResultInterface } from "@observatorio-brasil/atores/src/api/services/search-result/interfaces/search-result.interface";
-import { Loading } from "@observatorio-brasil/atores/src/components/Loading";
+import { formatDate } from "../../../../src/utils/date";
+import { SearchResultInterface } from "../../../../src/src/api/services/search-result/interfaces/search-result.interface";
+import { Loading } from "../../../../src/src/components/Loading";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
+} from "../../../../src/src/store/hooks";
 import {
   SearchResultActions,
   selectSearchResult,
-} from "@observatorio-brasil/atores/src/store/slices/search-result";
+} from "../../../../src/src/store/slices/search-result";
 import Link from "next/link";
 
 const searchStatusColors = {

@@ -10,18 +10,18 @@ import {
 } from "@chakra-ui/react";
 import { SearchOutlined } from "@ant-design/icons";
 import { useForm } from "react-hook-form";
-import { useDebounce } from "@observatorio-brasil/atores/src/hooks/useDebounce";
+import { useDebounce } from "../../../../src/hooks/useDebounce";
 import { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/router";
-import FolderCard from "@observatorio-brasil/atores/src/components/FolderCard";
-import PageWrapper from "@observatorio-brasil/atores/src/components/PageWrapper";
-import Form from "@observatorio-brasil/atores/src/components/RHF/Form";
-import TextInput from "@observatorio-brasil/atores/src/components/RHF/TextInput";
-import theme from "@observatorio-brasil/atores/src/theme";
-import { searchFolderByName } from "@observatorio-brasil/atores/src/api/services/folders";
+import FolderCard from "../../../../src/components/FolderCard";
+import PageWrapper from "../../../../src/components/PageWrapper";
+import Form from "../../../../src/components/RHF/Form";
+import TextInput from "../../../../src/components/RHF/TextInput";
+import theme from "../../../../src/theme";
+import { searchFolderByName } from "../../../../src/api/services/folders";
 import { Client, Folder } from "@prisma/client";
-import { getClientById } from "@observatorio-brasil/atores/src/api/services/clients";
-import { Loading } from "@observatorio-brasil/atores/src/components/Loading";
+import { getClientById } from "../../../../src/api/services/clients";
+import { Loading } from "../../../../src/components/Loading";
 
 const defaultValues = {
   search: "",

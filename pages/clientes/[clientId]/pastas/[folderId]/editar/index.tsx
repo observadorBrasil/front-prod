@@ -9,17 +9,17 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import PageWrapper from "@observatorio-brasil/atores/src/components/PageWrapper";
-import Form from "@observatorio-brasil/atores/src/components/RHF/Form";
-import TextInput from "@observatorio-brasil/atores/src/components/RHF/TextInput";
+import PageWrapper from "../../../../../../src/components/PageWrapper";
+import Form from "../../../../../../src/components/RHF/Form";
+import TextInput from "../../../../../../src/components/RHF/TextInput";
 import { useForm } from "react-hook-form";
 import { useCallback, useEffect, useState } from "react";
-import Button from "@observatorio-brasil/atores/src/components/Button";
+import Button from "../../../../../../src/components/Button";
 import {
   createFolder,
   getFolder,
   patchFolder,
-} from "@observatorio-brasil/atores/src/api/services/folders";
+} from "../../../../../../src/api/services/folders";
 import { Folder } from "@prisma/client";
 
 interface FolderFormInput {

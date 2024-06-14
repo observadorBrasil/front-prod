@@ -1,9 +1,9 @@
 import ElasticsearchAPIConnector, {
   PostProcessRequestBodyFn,
 } from "@elastic/search-ui-elasticsearch-connector";
-import { SimpleSearchFormState } from "@observatorio-brasil/atores/src/store/slices/forms/simpleSearchForm";
+import { SimpleSearchFormState } from "../../../../../src/store/slices/forms/simpleSearchForm";
 import { config, createElasticFilter, host, index } from ".";
-import { store } from "@observatorio-brasil/atores/src/store";
+import { store } from "../../../../../src/store";
 
 export const useElasticSimpleConfig = (filterData: SimpleSearchFormState) => {
   const { number: number, year: year, houseIds: houseid } = filterData.data;

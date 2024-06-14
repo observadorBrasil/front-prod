@@ -1,6 +1,6 @@
 import { SagaIterator } from "redux-saga";
 import { all, call, put, takeLatest } from "redux-saga/effects";
-import { toggleActiveSearch } from "@observatorio-brasil/atores/src/api/services/search";
+import { toggleActiveSearch } from "../../../../src/api/services/search";
 import { SearchActions } from "../../slices/search";
 
 function* deleteSearchSaga({

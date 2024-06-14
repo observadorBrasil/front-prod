@@ -1,4 +1,4 @@
-import { patchTramitacao } from "@observatorio-brasil/atores/src/api/services/tramitacao";
+import { patchTramitacao } from "../../../../src/api/services/tramitacao";
 import { SagaIterator } from "redux-saga";
 import { all, call, put, takeLatest } from "redux-saga/effects";
 import { PropositionActions } from "../../slices/proposition";

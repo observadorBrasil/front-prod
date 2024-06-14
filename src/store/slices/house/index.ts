@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { HouseInterface } from "@observatorio-brasil/atores/src/api/services/houses/interfaces/house.interface";
+import { HouseInterface } from "../../../../src/api/services/houses/interfaces/house.interface";
 import { RootState } from "../..";
 
 export type HouseState = {

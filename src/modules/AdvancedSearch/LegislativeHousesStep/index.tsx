@@ -1,19 +1,19 @@
 import React from "react";
 import { HStack, Text, VStack } from "@chakra-ui/react";
-import { getHouses } from "@observatorio-brasil/atores/src/api/services/houses";
+import { getHouses } from "../../../../src/api/services/houses";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
+} from "../../../../src/store/hooks";
 import {
   FormActions,
   LegislativeHousesStepInput,
   selectAdvancedSearchForm,
-} from "@observatorio-brasil/atores/src/store/slices/forms/advancedSearchForm";
+} from "../../../../src/store/slices/forms/advancedSearchForm";
 import {
   HouseActions,
   selectHouse,
-} from "@observatorio-brasil/atores/src/store/slices/house";
+} from "../../../../src/store/slices/house";
 import { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { StepButton } from "../AdvancedSearchFiltersStep/StepButton";

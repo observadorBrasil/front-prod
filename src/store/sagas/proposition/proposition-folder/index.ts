@@ -2,9 +2,9 @@ import {
   createPropositionFolder,
   patchPropositionFolder,
   removePropositionFolderById,
-} from "@observatorio-brasil/atores/src/api/services/proposition-folders";
-import { PropositionActions } from "@observatorio-brasil/atores/src/store/slices/proposition";
-import { PropositionFolderActions } from "@observatorio-brasil/atores/src/store/slices/proposition/proposition-folder";
+} from "../../../../../src/api/services/proposition-folders";
+import { PropositionActions } from "../../../../../src/store/slices/proposition";
+import { PropositionFolderActions } from "../../../../../src/store/slices/proposition/proposition-folder";
 import { SagaIterator } from "redux-saga";
 import { all, call, put, takeEvery, takeLatest } from "redux-saga/effects";
 

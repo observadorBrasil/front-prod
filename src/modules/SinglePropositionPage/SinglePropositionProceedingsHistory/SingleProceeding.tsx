@@ -8,16 +8,16 @@ import theme from "../../../theme";
 import TextAreaInput from "../../../components/RHF/TextAreaInput";
 import Button from "../../../components/Button";
 import { TramitacaoInterface } from "../../../api/services/tramitacao/interfaces/tramitacao.interface";
-import EditableTextArea from "@observatorio-brasil/atores/src/components/RHF/EditableTextArea";
+import EditableTextArea from "../../../../src/components/RHF/EditableTextArea";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
+} from "../../../../src/store/hooks";
 import {
   selectTramitacao,
   TramitacaoActions,
-} from "@observatorio-brasil/atores/src/store/slices/tramitacao";
-import { Loading } from "@observatorio-brasil/atores/src/components/Loading";
+} from "../../../../src/store/slices/tramitacao";
+import { Loading } from "../../../../src/components/Loading";
 
 interface SingleProceedingProps {
   proceeding: TramitacaoInterface;

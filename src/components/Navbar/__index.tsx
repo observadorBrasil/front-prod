@@ -31,9 +31,9 @@ import Image from "next/image";
 import theme from "../../theme/index";
 import { useAppSelector } from "../../store/hooks";
 import routes, { NavItem } from "./routes";
-import { selectUser } from "@observatorio-brasil/atores/src/store/slices/user";
+import { selectUser } from "../../../src/store/slices/user";
 import Link from "../Link";
-import { selectNotification } from "@observatorio-brasil/atores/src/store/slices/notification";
+import { selectNotification } from "../../../src/store/slices/notification";
 
 export default function Navbar() {
   const user = useAppSelector(selectUser);

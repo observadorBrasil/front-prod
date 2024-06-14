@@ -2,20 +2,20 @@ import React from "react";
 import { HStack, Select, Text, VStack } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import PageWrapper from "@observatorio-brasil/atores/src/components/PageWrapper";
-import { useElasticAdvancedConfig } from "@observatorio-brasil/atores/src/modules/AdvancedSearch/ElasticFilters/config/advanced";
+import PageWrapper from "../../../src/components/PageWrapper";
+import { useElasticAdvancedConfig } from "../../../src/modules/AdvancedSearch/ElasticFilters/config/advanced";
 import {
   FormActions,
   selectAdvancedSearchForm,
-} from "@observatorio-brasil/atores/src/store/slices/forms/advancedSearchForm";
-import Stepper from "@observatorio-brasil/atores/src/components/Stepper";
-import AdvancedSearchFiltersStep from "@observatorio-brasil/atores/src/modules/AdvancedSearch/AdvancedSearchFiltersStep";
-import ElasticFilters from "@observatorio-brasil/atores/src/modules/AdvancedSearch/ElasticFilters";
-import LegislativeHousesStep from "@observatorio-brasil/atores/src/modules/AdvancedSearch/LegislativeHousesStep";
+} from "../../../src/store/slices/forms/advancedSearchForm";
+import Stepper from "../../../src/components/Stepper";
+import AdvancedSearchFiltersStep from "../../../src/modules/AdvancedSearch/AdvancedSearchFiltersStep";
+import ElasticFilters from "../../../src/modules/AdvancedSearch/ElasticFilters";
+import LegislativeHousesStep from "../../../src/modules/AdvancedSearch/LegislativeHousesStep";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
+} from "../../../src/store/hooks";
 
 export default function AdvancedSearchPage() {
   const dispatch = useAppDispatch();

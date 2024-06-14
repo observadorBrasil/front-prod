@@ -1,17 +1,17 @@
 import React from "react";
 import { HStack, Text, VStack } from "@chakra-ui/react";
-import Button from "@observatorio-brasil/atores/src/components/Button";
-import { Loading } from "@observatorio-brasil/atores/src/components/Loading";
-import Form from "@observatorio-brasil/atores/src/components/RHF/Form";
-import TextInput from "@observatorio-brasil/atores/src/components/RHF/TextInput";
+import Button from "../../../../src/components/Button";
+import { Loading } from "../../../../src/components/Loading";
+import Form from "../../../../src/components/RHF/Form";
+import TextInput from "../../../../src/components/RHF/TextInput";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
+} from "../../../../src/store/hooks";
 import {
   PropositionActions,
   selectProposition,
-} from "@observatorio-brasil/atores/src/store/slices/proposition";
+} from "../../../../src/store/slices/proposition";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { PropositionInterface } from "../../../api/services/propositions/interfaces/proposition.interface";

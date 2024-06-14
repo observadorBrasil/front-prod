@@ -2,7 +2,7 @@ import {
   createUser,
   deleteUserById,
   login,
-} from "@observatorio-brasil/atores/src/api/services/user";
+} from "../../../src/api/services/user";
 import { setCookie } from "cookies-next";
 import Router from "next/router";
 import { SagaIterator } from "redux-saga";

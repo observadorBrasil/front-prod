@@ -1,15 +1,15 @@
 import React from "react";
 import { HStack, Text, VStack } from "@chakra-ui/react";
-import TextInput from "@observatorio-brasil/atores/src/components/RHF/TextInput";
+import TextInput from "../../../../src/components/RHF/TextInput";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
+} from "../../../../src/store/hooks";
 import {
   FormActions,
   ScheduledFilter,
   selectAdvancedSearchForm,
-} from "@observatorio-brasil/atores/src/store/slices/forms/advancedSearchForm";
+} from "../../../../src/store/slices/forms/advancedSearchForm";
 import { useForm } from "react-hook-form";
 import { StepButton } from "../AdvancedSearchFiltersStep/StepButton";
 

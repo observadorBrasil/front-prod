@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Search } from "@prisma/client";
-import { SearchResultInterface } from "@observatorio-brasil/atores/src/api/services/search-result/interfaces/search-result.interface";
+import { SearchResultInterface } from "../../../../src/api/services/search-result/interfaces/search-result.interface";
 import { RootState } from "../..";
 
 export type SearchResultState = {

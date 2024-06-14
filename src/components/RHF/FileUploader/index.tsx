@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Box, Image, Input, StackProps, Text, VStack } from "@chakra-ui/react";
-import { convertBase64 } from "@observatorio-brasil/atores/src/utils/file";
+import { convertBase64 } from "../../../../src/utils/file";
 import { UseFormRegisterReturn } from "react-hook-form";
 import Button from "../../Button";
 

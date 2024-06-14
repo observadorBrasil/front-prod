@@ -1,6 +1,6 @@
 import React from "react";
 import { ColumnDef } from "@tanstack/react-table";
-import { PropositionInterface } from "@observatorio-brasil/atores/src/api/services/propositions/interfaces/proposition.interface";
+import { PropositionInterface } from "../../../../src/api/services/propositions/interfaces/proposition.interface";
 import CommonClientsColumn from "../CommonClientsColumn";
 
 const columns: ColumnDef<PropositionInterface>[] = [

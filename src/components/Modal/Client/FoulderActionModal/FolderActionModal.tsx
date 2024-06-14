@@ -21,13 +21,13 @@ import {
   createFolder,
   getFolder,
   patchFolder,
-} from '@observatorio-brasil/atores/src/api/services/folders'
+} from '../../../../../src/api/services/folders'
 import Form from '../../../RHF/Form'
 import ChakraInput from '../../../CrakraInput/ChakraInput'
 import { useDispatch, useSelector } from 'react-redux'
 import { onClose } from '../../../../store/slices/clientFolderModal/index'
 import { Loading } from '../../../Loading'
-import { FolderActions } from '@observatorio-brasil/atores/src/store/slices/folder'
+import { FolderActions } from '../../../../../src/store/slices/folder'
 
 interface FolderFormInputProps {
   name: string

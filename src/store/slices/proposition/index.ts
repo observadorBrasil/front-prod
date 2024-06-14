@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Prisma } from "@prisma/client";
-import { PropositionInterface } from "@observatorio-brasil/atores/src/api/services/propositions/interfaces/proposition.interface";
+import { PropositionInterface } from "../../../../src/api/services/propositions/interfaces/proposition.interface";
 import { RootState } from "../..";
 
 export type PropositionState = {

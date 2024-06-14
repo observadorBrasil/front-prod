@@ -2,7 +2,7 @@ import React, { ReactNode, useEffect, useState } from "react";
 import { Button, HStack, StackProps, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useAppSelector } from "../../store/hooks";
-import { selectUser } from "@observatorio-brasil/atores/src/store/slices/user";
+import { selectUser } from "../../../src/store/slices/user";
 import { LeftOutlined } from "@ant-design/icons";
 import Navbar from "../Navbar/index";
 import theme from "../../theme/index";

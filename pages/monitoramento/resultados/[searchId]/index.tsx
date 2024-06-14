@@ -1,24 +1,24 @@
 import React from 'react';
 import { SearchOutlined } from "@ant-design/icons";
 import { Center, Spinner, Stack, Text } from "@chakra-ui/react";
-import { getResultsBySearchId } from "@observatorio-brasil/atores/src/api/services/search-result";
-import { SearchResultInterface } from "@observatorio-brasil/atores/src/api/services/search-result/interfaces/search-result.interface";
-import DataTable from "@observatorio-brasil/atores/src/components/DataTable/DataTable";
-import { Loading } from "@observatorio-brasil/atores/src/components/Loading";
-import PageWrapper from "@observatorio-brasil/atores/src/components/PageWrapper";
-import Form from "@observatorio-brasil/atores/src/components/RHF/Form";
-import TextInput from "@observatorio-brasil/atores/src/components/RHF/TextInput";
-import { useDebounce } from "@observatorio-brasil/atores/src/hooks/useDebounce";
-import { useSearchResultsColumns } from "@observatorio-brasil/atores/src/modules/MonitoringPage/Results/columns";
+import { getResultsBySearchId } from "../../../../src/api/services/search-result";
+import { SearchResultInterface } from "../../../../src/api/services/search-result/interfaces/search-result.interface";
+import DataTable from "../../../../src/components/DataTable/DataTable";
+import { Loading } from "../../../../src/components/Loading";
+import PageWrapper from "../../../../src/components/PageWrapper";
+import Form from "../../../../src/components/RHF/Form";
+import TextInput from "../../../../src/components/RHF/TextInput";
+import { useDebounce } from "../../../../src/hooks/useDebounce";
+import { useSearchResultsColumns } from "../../../../src/modules/MonitoringPage/Results/columns";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
+} from "../../../../src/store/hooks";
 import {
   SearchResultActions,
   selectSearchResult,
-} from "@observatorio-brasil/atores/src/store/slices/search-result";
-import theme from "@observatorio-brasil/atores/src/theme";
+} from "../../../../src/store/slices/search-result";
+import theme from "../../../../src/theme";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";

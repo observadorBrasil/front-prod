@@ -1,7 +1,7 @@
 import { ApiRepository } from "../..";
 import { Prisma } from "@prisma/client";
 import { FolderInterface } from "./interfaces/folder.interface";
-import { FolderWithClientAndPropositions } from "@observatorio-brasil/atores/prisma/interfaces/folder";
+import { FolderWithClientAndPropositions } from "../../../../prisma/interfaces/folder";
 
 export async function createFolder(data: Prisma.FolderUncheckedCreateInput) {
   const api = new ApiRepository("/folder");

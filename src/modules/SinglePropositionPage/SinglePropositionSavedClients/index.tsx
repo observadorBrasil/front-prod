@@ -6,23 +6,23 @@ import { useCallback, useEffect, useState } from "react";
 import {
   PropositionFolderActions,
   selectPropositionFolder,
-} from "@observatorio-brasil/atores/src/store/slices/proposition/proposition-folder";
-import { selectProposition } from "@observatorio-brasil/atores/src/store/slices/proposition";
+} from "../../../../src/store/slices/proposition/proposition-folder";
+import { selectProposition } from "../../../../src/store/slices/proposition";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
-import { ClientInterface } from "@observatorio-brasil/atores/src/api/services/clients/interfaces/client.interface";
-import { PropositionFolderInterface } from "@observatorio-brasil/atores/src/api/services/proposition-folders/interfaces/proposition-folder.interface";
-import ContentBox from "@observatorio-brasil/atores/src/components/ContentBox";
-import Form from "@observatorio-brasil/atores/src/components/RHF/Form";
-import TextInput from "@observatorio-brasil/atores/src/components/RHF/TextInput";
-import Button from "@observatorio-brasil/atores/src/components/Button";
-import DataTable from "@observatorio-brasil/atores/src/components/DataTable/DataTable";
-import { searchClientByName } from "@observatorio-brasil/atores/src/api/services/clients";
-import { getFoldersByClientId } from "@observatorio-brasil/atores/src/api/services/folders";
-import { useDebounce } from "@observatorio-brasil/atores/src/hooks/useDebounce";
-import { FolderInterface } from "@observatorio-brasil/atores/src/api/services/folders/interfaces/folder.interface";
+} from "../../../../src/store/hooks";
+import { ClientInterface } from "../../../../src/api/services/clients/interfaces/client.interface";
+import { PropositionFolderInterface } from "../../../../src/api/services/proposition-folders/interfaces/proposition-folder.interface";
+import ContentBox from "../../../../src/components/ContentBox";
+import Form from "../../../../src/components/RHF/Form";
+import TextInput from "../../../../src/components/RHF/TextInput";
+import Button from "../../../../src/components/Button";
+import DataTable from "../../../../src/components/DataTable/DataTable";
+import { searchClientByName } from "../../../../src/api/services/clients";
+import { getFoldersByClientId } from "../../../../src/api/services/folders";
+import { useDebounce } from "../../../../src/hooks/useDebounce";
+import { FolderInterface } from "../../../../src/api/services/folders/interfaces/folder.interface";
 
 interface Props {
   propositionId: number;

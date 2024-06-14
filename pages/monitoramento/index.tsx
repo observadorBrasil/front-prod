@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
 import { Button, Center, HStack, VStack } from "@chakra-ui/react";
-import { getActiveSearches } from "@observatorio-brasil/atores/src/api/services/search";
+import { getActiveSearches } from "../../src/api/services/search";
 // import Button from "@observatorio-brasil/atores/src/components/Button";
-import Link from "@observatorio-brasil/atores/src/components/Link";
-import { Loading } from "@observatorio-brasil/atores/src/components/Loading";
-import PageWrapper from "@observatorio-brasil/atores/src/components/PageWrapper";
+import Link from "../../src/components/Link";
+import { Loading } from "../../src/components/Loading";
+import PageWrapper from "../../src/components/PageWrapper";
 import EditIcon from '../../public/images/edit-icon.svg'
 import DeleteIcon from '../../public/images/delete-icon.svg'
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
+} from "../../src/store/hooks";
 import {
   SearchActions,
   selectSearch,
-} from "@observatorio-brasil/atores/src/store/slices/search";
+} from "../../src/store/slices/search";
 import { useEffect, useCallback } from "react";
 import { Table } from 'antd';
 import { LinkOutlined } from '@ant-design/icons';
-import { formatDate } from '@observatorio-brasil/atores/src/utils/date';
+import { formatDate } from '../../src/utils/date';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { onOpenDeleteModal } from '@observatorio-brasil/atores/src/store/slices/monitoringDeleteModal';
+import { onOpenDeleteModal } from '../../src/store/slices/monitoringDeleteModal';
 import MonitoringDeleteModal from 'src/components/Modal/Monitoring/MonitoringDeleteModal/MonitoringDeleteModal'
 const MonitoringPage = () => {
   const router = useRouter()

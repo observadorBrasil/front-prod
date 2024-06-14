@@ -9,23 +9,23 @@ import {
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useState, useCallback, useEffect } from "react";
-import { useAppSelector } from "@observatorio-brasil/atores/src/store/hooks";
-import Button from "@observatorio-brasil/atores/src/components/Button";
-import { csvHeaders } from "@observatorio-brasil/atores/src/modules/ClientsPage";
-import { exportFolderPropositions } from "@observatorio-brasil/atores/src/api/services/propositions";
-import { selectPropositionFolder } from "@observatorio-brasil/atores/src/store/slices/proposition/proposition-folder";
-import useClientPropositionsColumns from "@observatorio-brasil/atores/src/modules/ClientsPage/DataTable/columns";
-import PageWrapper from "@observatorio-brasil/atores/src/components/PageWrapper";
-import DataTable from "@observatorio-brasil/atores/src/components/DataTable/DataTable";
+import { useAppSelector } from "../../../../../../src/store/hooks";
+import Button from "../../../../../../src/components/Button";
+import { csvHeaders } from "../../../../../../src/modules/ClientsPage";
+import { exportFolderPropositions } from "../../../../../../src/api/services/propositions";
+import { selectPropositionFolder } from "../../../../../../src/store/slices/proposition/proposition-folder";
+import useClientPropositionsColumns from "../../../../../../src/modules/ClientsPage/DataTable/columns";
+import PageWrapper from "../../../../../../src/components/PageWrapper";
+import DataTable from "../../../../../../src/components/DataTable/DataTable";
 import {
   getFolderByIdsWithPropositions,
   patchFolder,
-} from "@observatorio-brasil/atores/src/api/services/folders";
-import { RenameModal } from "@observatorio-brasil/atores/src/components/Modal/RenameModal";
+} from "../../../../../../src/api/services/folders";
+import { RenameModal } from "../../../../../../src/components/Modal/RenameModal";
 import { FormOutlined } from "@ant-design/icons";
-import { FolderWithClientAndPropositions } from "@observatorio-brasil/atores/prisma/interfaces/folder";
-import { exportCSVFile } from "@observatorio-brasil/atores/src/utils/csv";
-import { Loading } from "@observatorio-brasil/atores/src/components/Loading";
+import { FolderWithClientAndPropositions } from "../../../../../../prisma/interfaces/folder";
+import { exportCSVFile } from "../../../../../../src/utils/csv";
+import { Loading } from "../../../../../../src/components/Loading";
 
 export default function ClientPropositionsPage() {
   const router = useRouter();

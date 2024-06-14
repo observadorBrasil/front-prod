@@ -2,34 +2,34 @@ import React from "react";
 import { HStack, Stack, Text, VStack } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { StepButton } from "./StepButton";
-import SideBySideContentBox from "@observatorio-brasil/atores/src/components/SideBySideContentBox";
+import SideBySideContentBox from "../../../../src/components/SideBySideContentBox";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
+} from "../../../../src/store/hooks";
 import {
   selectAdvancedSearchForm,
   FormActions,
   FiltersStepInput,
-} from "@observatorio-brasil/atores/src/store/slices/forms/advancedSearchForm";
-import { selectHouse } from "@observatorio-brasil/atores/src/store/slices/house";
+} from "../../../../src/store/slices/forms/advancedSearchForm";
+import { selectHouse } from "../../../../src/store/slices/house";
 import {
   PropositionTypeActions,
   selectPropositionType,
-} from "@observatorio-brasil/atores/src/store/slices/proposition/proposition-type";
+} from "../../../../src/store/slices/proposition/proposition-type";
 import {
   selectSituation,
   SituationActions,
-} from "@observatorio-brasil/atores/src/store/slices/proposition/situation";
+} from "../../../../src/store/slices/proposition/situation";
 import {
   getPropositionTypes,
   getPropositionSituations,
-} from "@observatorio-brasil/atores/src/api/services/propositions";
+} from "../../../../src/api/services/propositions";
 import { useCallback, useEffect } from "react";
-import Form from "@observatorio-brasil/atores/src/components/RHF/Form";
-import TextInput from "@observatorio-brasil/atores/src/components/RHF/TextInput";
+import Form from "../../../../src/components/RHF/Form";
+import TextInput from "../../../../src/components/RHF/TextInput";
 import { PlusCircleOutlined } from "@ant-design/icons";
-import InputBubbles from "@observatorio-brasil/atores/src/components/RHF/InputBubbles";
+import InputBubbles from "../../../../src/components/RHF/InputBubbles";
 
 interface HelperFiltersStepInput {
   keyword: string;

@@ -10,11 +10,11 @@ import { useAppSelector } from "../../../src/store/hooks";
 import {
   FormsActions,
   selectClientRegistrationForm,
-} from "@observatorio-brasil/atores/src/store/slices/forms";
-import FileUploader from "@observatorio-brasil/atores/src/components/RHF/FileUploader";
+} from "../../../src/store/slices/forms";
+import FileUploader from "../../../src/components/RHF/FileUploader";
 import { toast } from "react-toastify";
 import dayjs from "dayjs";
-import { createClient } from "@observatorio-brasil/atores/src/api/services/clients";
+import { createClient } from "../../../src/api/services/clients";
 import { useRouter } from "next/router";
 
 export interface RegisterClientFormValues {

@@ -9,21 +9,21 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import PageWrapper from "@observatorio-brasil/atores/src/components/PageWrapper";
+import PageWrapper from "../../src/components/PageWrapper";
 import { useForm } from "react-hook-form";
-import Form from "@observatorio-brasil/atores/src/components/RHF/Form";
-import TextInput from "@observatorio-brasil/atores/src/components/RHF/TextInput";
-import Button from "@observatorio-brasil/atores/src/components/Button";
+import Form from "../../src/components/RHF/Form";
+import TextInput from "../../src/components/RHF/TextInput";
+import Button from "../../src/components/Button";
 import { useDispatch } from "react-redux";
-import { useAppSelector } from "@observatorio-brasil/atores/src/store/hooks";
+import { useAppSelector } from "../../src/store/hooks";
 import {
   FormsActions,
   selectClientRegistrationForm,
-} from "@observatorio-brasil/atores/src/store/slices/forms";
-import FileUploader from "@observatorio-brasil/atores/src/components/RHF/FileUploader";
+} from "../../src/store/slices/forms";
+import FileUploader from "../../src/components/RHF/FileUploader";
 import { toast } from "react-toastify";
 import dayjs from "dayjs";
-import { createClient } from "@observatorio-brasil/atores/src/api/services/clients";
+import { createClient } from "../../src/api/services/clients";
 import { useRouter } from "next/router";
 import styles from "./external-customer-register.module.css";
 import Image from "next/image";

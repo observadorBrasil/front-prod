@@ -3,7 +3,7 @@ import {
   CreateUserRequest,
   LoginRequest,
   UserInterface,
-} from "@observatorio-brasil/atores/src/api/services/user/interfaces/user.interface";
+} from "../../../../src/api/services/user/interfaces/user.interface";
 import { RootState } from "../..";
 
 export type UserState = {

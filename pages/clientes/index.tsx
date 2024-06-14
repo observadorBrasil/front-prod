@@ -14,12 +14,12 @@ import theme from "../../src/theme";
 import ClientCard from "../../src/components/ClientCard";
 import { useForm } from "react-hook-form";
 import Form from "../../src/components/RHF/Form";
-import { useDebounce } from "@observatorio-brasil/atores/src/hooks/useDebounce";
+import { useDebounce } from "../../src/hooks/useDebounce";
 import { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/router";
-import { searchClientByName } from "@observatorio-brasil/atores/src/api/services/clients";
-import { ClientInterface } from "@observatorio-brasil/atores/src/api/services/clients/interfaces/client.interface";
-import { Loading } from "@observatorio-brasil/atores/src/components/Loading";
+import { searchClientByName } from "../../src/api/services/clients";
+import { ClientInterface } from "../../src/api/services/clients/interfaces/client.interface";
+import { Loading } from "../../src/components/Loading";
 
 const defaultValues = {
   search: "",

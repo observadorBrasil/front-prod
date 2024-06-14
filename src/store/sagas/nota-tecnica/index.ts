@@ -6,7 +6,7 @@ import {
   createTechnicalNote,
   removeTechnicalNote,
   updateTechnicalNote,
-} from "@observatorio-brasil/atores/src/api/services/notas-tecnicas";
+} from "../../../../src/api/services/notas-tecnicas";
 
 function* createTechnicalNoteSaga({
   payload,

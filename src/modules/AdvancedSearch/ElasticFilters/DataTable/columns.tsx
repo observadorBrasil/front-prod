@@ -4,7 +4,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { SearchThemisIndex } from "../types";
 import Link from "next/link";
 import { LinkOutlined } from "@ant-design/icons";
-import { formatDate } from "@observatorio-brasil/atores/src/utils/date";
+import { formatDate } from "../../../../../src/utils/date";
 
 const columns: ColumnDef<SearchThemisIndex>[] = [
   {

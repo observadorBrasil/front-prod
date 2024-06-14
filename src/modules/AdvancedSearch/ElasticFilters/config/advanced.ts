@@ -1,8 +1,8 @@
 import ElasticsearchAPIConnector from "@elastic/search-ui-elasticsearch-connector";
-import { AdvancedSearchFormState } from "@observatorio-brasil/atores/src/store/slices/forms/advancedSearchForm";
+import { AdvancedSearchFormState } from "../../../../../src/store/slices/forms/advancedSearchForm";
 import { PostProcessRequestBodyFn } from "@elastic/search-ui-elasticsearch-connector/lib/esm/types";
 import { config, createElasticFilter, host, index, mutateRequestBody } from ".";
-import { store } from "@observatorio-brasil/atores/src/store";
+import { store } from "../../../../../src/store";
 
 export const useElasticAdvancedConfig = (
   filterData: AdvancedSearchFormState

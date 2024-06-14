@@ -1,5 +1,5 @@
 import React from "react";
-import DataTable from "@observatorio-brasil/atores/src/components/DataTable/DataTable";
+import DataTable from "../../../../../src/components/DataTable/DataTable";
 import columns from "../DataTable/columns";
 import { SearchThemisIndex } from "../types";
 import { Center, CircularProgress } from "@chakra-ui/react";

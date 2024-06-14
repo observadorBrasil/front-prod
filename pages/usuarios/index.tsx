@@ -1,15 +1,15 @@
 import React from 'react';
 import { Center, Stack, Text } from "@chakra-ui/react";
-import { getAllUsers } from "@observatorio-brasil/atores/src/api/services/user";
-import { UserInterface } from "@observatorio-brasil/atores/src/api/services/user/interfaces/user.interface";
-import Button from "@observatorio-brasil/atores/src/components/Button";
-import DataTable from "@observatorio-brasil/atores/src/components/DataTable/DataTable";
-import Link from "@observatorio-brasil/atores/src/components/Link";
-import { Loading } from "@observatorio-brasil/atores/src/components/Loading";
-import PageWrapper from "@observatorio-brasil/atores/src/components/PageWrapper";
-import columns from "@observatorio-brasil/atores/src/modules/UsersPage/Datatable/columns";
-import { useAppSelector } from "@observatorio-brasil/atores/src/store/hooks";
-import { selectUser } from "@observatorio-brasil/atores/src/store/slices/user";
+import { getAllUsers } from "../../src/api/services/user";
+import { UserInterface } from "../../src/api/services/user/interfaces/user.interface";
+import Button from "../../src/components/Button";
+import DataTable from "../../src/components/DataTable/DataTable";
+import Link from "../../src/components/Link";
+import { Loading } from "../../src/components/Loading";
+import PageWrapper from "../../src/components/PageWrapper";
+import columns from "../../src/modules/UsersPage/Datatable/columns";
+import { useAppSelector } from "../../src/store/hooks";
+import { selectUser } from "../../src/store/slices/user";
 import { useEffect, useState } from "react";
 
 const UsersPage = () => {

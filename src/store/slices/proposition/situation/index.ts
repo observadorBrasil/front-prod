@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Situation } from "@prisma/client";
-import { RootState } from "@observatorio-brasil/atores/src/store";
+import { RootState } from "../../../../../src/store";
 
 export type SimpleSearchFormState = {
   situations: Situation[];

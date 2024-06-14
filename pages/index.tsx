@@ -24,8 +24,8 @@ import { getResultsBySearchId } from '../src/api/services/search-result'
 import { SearchResultInterface } from '../src/api/services/search-result/interfaces/search-result.interface'
 import DonutArea from '../src/components/DonutDashArea/DonutArea/DonutArea'
 import Dashboard from '../src/patterns/Dashboard'
-import { getActiveSearches } from '@observatorio-brasil/atores/src/api/services/search'
-import { useAppDispatch } from '@observatorio-brasil/atores/src/store/hooks'
+import { getActiveSearches } from '../src/api/services/search'
+import { useAppDispatch } from '../src/store/hooks'
 // https://github.com/nrwl/nx/issues/9017#issuecomment-1180462040
 // import path from 'path'
 // path.resolve('./next.config.js')

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Prisma } from "@prisma/client";
-import { RootState } from "@observatorio-brasil/atores/src/store";
+import { RootState } from "../../../../../src/store";
 
 export type PropositionFolderState = {
   loading: boolean;

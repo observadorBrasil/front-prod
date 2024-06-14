@@ -17,8 +17,10 @@ import notification from "./notification";
 import { clientFolderModal } from "./clientFolderModal";
 import { clientFolderDeleteModal } from './clientFolderDeleteModal/index'
 import { monitoringDeleteModal } from './monitoringDeleteModal/index'
+import { clientModal } from "./clientModal";
 
 const rootReducer = combineReducers({
+  clientModal,
   monitoringDeleteModal,
   clientFolderModal,
   clientFolderDeleteModal,

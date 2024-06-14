@@ -4,20 +4,20 @@ import { useRouter } from "next/router";
 import {
   FormActions,
   selectAdvancedSearchForm,
-} from "@observatorio-brasil/atores/src/store/slices/forms/advancedSearchForm";
-import PageWrapper from "@observatorio-brasil/atores/src/components/PageWrapper";
+} from "../../../../src/store/slices/forms/advancedSearchForm";
+import PageWrapper from "../../../../src/components/PageWrapper";
 import { useCallback, useEffect } from "react";
-import { useElasticMonitoringConfig } from "@observatorio-brasil/atores/src/modules/AdvancedSearch/ElasticFilters/config/monitoring";
-import { ElasticFilterStep } from "@observatorio-brasil/atores/src/modules/AdvancedSearch/ElasticFilterStep";
-import NewFilterStep from "@observatorio-brasil/atores/src/modules/AdvancedSearch/NewFilterStep";
-import Stepper from "@observatorio-brasil/atores/src/components/Stepper";
-import AdvancedSearchFiltersStep from "@observatorio-brasil/atores/src/modules/AdvancedSearch/AdvancedSearchFiltersStep";
-import LegislativeHousesStep from "@observatorio-brasil/atores/src/modules/AdvancedSearch/LegislativeHousesStep";
+import { useElasticMonitoringConfig } from "../../../../src/modules/AdvancedSearch/ElasticFilters/config/monitoring";
+import { ElasticFilterStep } from "../../../../src/modules/AdvancedSearch/ElasticFilterStep";
+import NewFilterStep from "../../../../src/modules/AdvancedSearch/NewFilterStep";
+import Stepper from "../../../../src/components/Stepper";
+import AdvancedSearchFiltersStep from "../../../../src/modules/AdvancedSearch/AdvancedSearchFiltersStep";
+import LegislativeHousesStep from "../../../../src/modules/AdvancedSearch/LegislativeHousesStep";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
-import { getSearchById } from "@observatorio-brasil/atores/src/api/services/search";
+} from "../../../../src/store/hooks";
+import { getSearchById } from "../../../../src/api/services/search";
 
 export default function EditMonitoringPage() {
   const dispatch = useAppDispatch();

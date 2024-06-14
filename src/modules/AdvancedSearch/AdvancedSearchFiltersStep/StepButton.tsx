@@ -3,11 +3,11 @@ import { Button, Text } from "@chakra-ui/react";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
+} from "../../../../src/store/hooks";
 import {
   FormActions,
   selectAdvancedSearchForm,
-} from "@observatorio-brasil/atores/src/store/slices/forms/advancedSearchForm";
+} from "../../../../src/store/slices/forms/advancedSearchForm";
 
 interface StepButtonProps {
   handleSubmit?: any;

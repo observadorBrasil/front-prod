@@ -1,20 +1,20 @@
 import React from "react";
 import { Center, HStack, Text } from "@chakra-ui/react";
-import PageWrapper from "@observatorio-brasil/atores/src/components/PageWrapper";
+import PageWrapper from "../../../src/components/PageWrapper";
 import { AlertOutlined, LinkOutlined } from "@ant-design/icons";
-import ContentBox from "@observatorio-brasil/atores/src/components/ContentBox";
+import ContentBox from "../../../src/components/ContentBox";
 import useGetNotifications from "./Provider";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
-import { Loading } from "@observatorio-brasil/atores/src/components/Loading";
-import Button from "@observatorio-brasil/atores/src/components/Button";
-import Link from "@observatorio-brasil/atores/src/components/Link";
+} from "../../../src/store/hooks";
+import { Loading } from "../../../src/components/Loading";
+import Button from "../../../src/components/Button";
+import Link from "../../../src/components/Link";
 import {
   NotificationActions,
   selectNotification,
-} from "@observatorio-brasil/atores/src/store/slices/notification";
+} from "../../../src/store/slices/notification";
 
 export default function NotificationsPage() {
   useGetNotifications();

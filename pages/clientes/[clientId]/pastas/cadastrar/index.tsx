@@ -8,13 +8,13 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import PageWrapper from "@observatorio-brasil/atores/src/components/PageWrapper";
-import Form from "@observatorio-brasil/atores/src/components/RHF/Form";
-import TextInput from "@observatorio-brasil/atores/src/components/RHF/TextInput";
+import PageWrapper from "../../../../../src/components/PageWrapper";
+import Form from "../../../../../src/components/RHF/Form";
+import TextInput from "../../../../../src/components/RHF/TextInput";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import Button from "@observatorio-brasil/atores/src/components/Button";
-import { createFolder } from "@observatorio-brasil/atores/src/api/services/folders";
+import Button from "../../../../../src/components/Button";
+import { createFolder } from "../../../../../src/api/services/folders";
 
 interface FolderFormInput {
   name: string;

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { NotificationInterface } from "@observatorio-brasil/atores/src/api/services/notifications/interfaces/notification.interface";
+import { NotificationInterface } from "../../../../src/api/services/notifications/interfaces/notification.interface";
 import { RootState } from "../..";
 
 export type NotificationState = {

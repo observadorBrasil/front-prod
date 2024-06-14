@@ -2,17 +2,17 @@ import React from 'react';
 import { HStack, Stack, Text, VStack, useToast } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import FileUploader from "@observatorio-brasil/atores/src/components/RHF/FileUploader";
+import FileUploader from "../../../../src/components/RHF/FileUploader";
 import {
   getClientById,
   updateClient,
-} from "@observatorio-brasil/atores/src/api/services/clients";
+} from "../../../../src/api/services/clients";
 import { useRouter } from "next/router";
-import PageWrapper from "@observatorio-brasil/atores/src/components/PageWrapper";
-import Form from "@observatorio-brasil/atores/src/components/RHF/Form";
-import TextInput from "@observatorio-brasil/atores/src/components/RHF/TextInput";
+import PageWrapper from "../../../../src/components/PageWrapper";
+import Form from "../../../../src/components/RHF/Form";
+import TextInput from "../../../../src/components/RHF/TextInput";
 import { useCallback, useEffect, useState } from "react";
-import Button from "@observatorio-brasil/atores/src/components/Button";
+import Button from "../../../../src/components/Button";
 import dayjs from "dayjs";
 import { Client } from "@prisma/client";
 

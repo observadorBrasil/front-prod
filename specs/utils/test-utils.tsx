@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import {
   RootState,
   store as reduxStore,
-} from "@observatorio-brasil/atores/src/store";
+} from "../../src/store";
 
 // This type interface extends the default options for render from RTL, as well
 // as allows the user to specify other things such as initialState, store.

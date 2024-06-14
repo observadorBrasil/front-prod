@@ -1,11 +1,11 @@
 import { SagaIterator } from "redux-saga";
 import { all, call, put, takeLatest } from "redux-saga/effects";
 import { SearchResultActions } from "../../slices/search-result";
-import { getSearchById } from "@observatorio-brasil/atores/src/api/services/search";
+import { getSearchById } from "../../../../src/api/services/search";
 import {
   getResultsBySearchId,
   updateResultById,
-} from "@observatorio-brasil/atores/src/api/services/search-result";
+} from "../../../../src/api/services/search-result";
 
 function* getSearchResultsSaga({
   payload,

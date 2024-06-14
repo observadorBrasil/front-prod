@@ -2,16 +2,16 @@ import React from "react";
 import { LinkOutlined, DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { ColumnDef } from "@tanstack/react-table";
 import { Search } from "@prisma/client";
-import { formatDate } from "@observatorio-brasil/atores/src/utils/date";
-import { Loading } from "@observatorio-brasil/atores/src/components/Loading";
+import { formatDate } from "../../../src/utils/date";
+import { Loading } from "../../../src/components/Loading";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
+} from "../../../src/store/hooks";
 import {
   SearchActions,
   selectSearch,
-} from "@observatorio-brasil/atores/src/store/slices/search";
+} from "../../../src/store/slices/search";
 import Link from "next/link";
 
 export const useSearchColumns = () => {

@@ -4,8 +4,8 @@ import { useAppSelector } from '../../store/hooks'
 import {
   NotificationActions,
   selectNotification,
-} from '@observatorio-brasil/atores/src/store/slices/notification'
-import { selectUser } from '@observatorio-brasil/atores/src/store/slices/user'
+} from '../../../src/store/slices/notification'
+import { selectUser } from '../../../src/store/slices/user'
 import Image from 'next/image'
 import DefaultImageUserProfile from '../../../public/images/default-image-user-profile.svg'
 import NotificationIcon from '../../../public/images/notification-icon.svg'

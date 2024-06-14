@@ -19,10 +19,10 @@ import {
   PropositionActions,
   selectProposition,
 } from "../../../src/store/slices/proposition";
-import Link from "@observatorio-brasil/atores/src/components/Link";
-import PrioritySelect from "@observatorio-brasil/atores/src/components/Select/PrioritySelect";
-import TextInput from "@observatorio-brasil/atores/src/components/RHF/TextInput";
-import Button from "@observatorio-brasil/atores/src/components/Button";
+import Link from "../../../src/components/Link";
+import PrioritySelect from "../../../src/components/Select/PrioritySelect";
+import TextInput from "../../../src/components/RHF/TextInput";
+import Button from "../../../src/components/Button";
 import { useRouter } from "next/router";
 import { Prisma } from "@prisma/client";
 

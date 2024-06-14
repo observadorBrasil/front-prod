@@ -9,11 +9,11 @@ import {
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
-import { ClientInterface } from "@observatorio-brasil/atores/src/api/services/clients/interfaces/client.interface";
+import { ClientInterface } from "../../../src/api/services/clients/interfaces/client.interface";
 import Link from "../Link";
 import { Card, CardBody, CardFooter, Image } from "@chakra-ui/react";
 import { useState } from "react";
-import { deleteClient } from "@observatorio-brasil/atores/src/api/services/clients";
+import { deleteClient } from "../../../src/api/services/clients";
 import { ConfirmModal } from "../Modal/ConfirmModal";
 import { useRouter } from "next/router";
 

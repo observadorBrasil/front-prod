@@ -1,5 +1,5 @@
 import ElasticsearchAPIConnector from "@elastic/search-ui-elasticsearch-connector";
-import { AdvancedSearchFormState } from "@observatorio-brasil/atores/src/store/slices/forms/advancedSearchForm";
+import { AdvancedSearchFormState } from "../../../../../src/store/slices/forms/advancedSearchForm";
 import {
   PostProcessRequestBodyFn,
   SearchRequest,

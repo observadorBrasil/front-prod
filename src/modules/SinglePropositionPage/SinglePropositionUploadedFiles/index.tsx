@@ -5,7 +5,7 @@ import ContentBox from "../../../components/ContentBox";
 import { HStack } from "@chakra-ui/react";
 import SingleFileBubble from "./SingleFileBubble";
 import { PropositionFileInterface } from "../../../api/services/propositions/interfaces/proposition-file.interface";
-import FileUploader from "@observatorio-brasil/atores/src/components/RHF/FileUploader";
+import FileUploader from "../../../../src/components/RHF/FileUploader";
 
 interface Props {
   propositionFiles: PropositionFileInterface[];

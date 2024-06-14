@@ -6,16 +6,16 @@ import { useForm } from "react-hook-form";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
+} from "../../../src/store/hooks";
 import {
   selectUser,
   UserActions,
-} from "@observatorio-brasil/atores/src/store/slices/user";
-import PageWrapper from "@observatorio-brasil/atores/src/components/PageWrapper";
-import TextInput from "@observatorio-brasil/atores/src/components/RHF/TextInput";
-import Form from "@observatorio-brasil/atores/src/components/RHF/Form";
-import { Loading } from "@observatorio-brasil/atores/src/components/Loading";
-import Button from "@observatorio-brasil/atores/src/components/Button";
+} from "../../../src/store/slices/user";
+import PageWrapper from "../../../src/components/PageWrapper";
+import TextInput from "../../../src/components/RHF/TextInput";
+import Form from "../../../src/components/RHF/Form";
+import { Loading } from "../../../src/components/Loading";
+import Button from "../../../src/components/Button";
 import { toast } from "react-toastify";
 
 interface RegisterUserFormValues {

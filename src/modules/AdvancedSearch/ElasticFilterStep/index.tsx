@@ -3,16 +3,16 @@ import { HStack, VStack, Text, Button } from "@chakra-ui/react";
 import {
   createSearch,
   updateSearch,
-} from "@observatorio-brasil/atores/src/api/services/search";
-import { Loading } from "@observatorio-brasil/atores/src/components/Loading";
+} from "../../../../src/api/services/search";
+import { Loading } from "../../../..src/components/Loading";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
+} from "../../../..src/store/hooks";
 import {
   FormActions,
   selectAdvancedSearchForm,
-} from "@observatorio-brasil/atores/src/store/slices/forms/advancedSearchForm";
+} from "../../../..src/store/slices/forms/advancedSearchForm";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { StepButton } from "../AdvancedSearchFiltersStep/StepButton";

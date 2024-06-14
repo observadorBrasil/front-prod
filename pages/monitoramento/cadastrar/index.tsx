@@ -8,12 +8,12 @@ import { useAppDispatch, useAppSelector } from "../../../src/store/hooks";
 import {
   FormActions,
   selectAdvancedSearchForm,
-} from "@observatorio-brasil/atores/src/store/slices/forms/advancedSearchForm";
-import PageWrapper from "@observatorio-brasil/atores/src/components/PageWrapper";
+} from "../../../src/store/slices/forms/advancedSearchForm";
+import PageWrapper from "../../../src/components/PageWrapper";
 import { useEffect } from "react";
-import { useElasticMonitoringConfig } from "@observatorio-brasil/atores/src/modules/AdvancedSearch/ElasticFilters/config/monitoring";
-import { ElasticFilterStep } from "@observatorio-brasil/atores/src/modules/AdvancedSearch/ElasticFilterStep";
-import NewFilterStep from "@observatorio-brasil/atores/src/modules/AdvancedSearch/NewFilterStep";
+import { useElasticMonitoringConfig } from "../../../src/modules/AdvancedSearch/ElasticFilters/config/monitoring";
+import { ElasticFilterStep } from "../../../src/modules/AdvancedSearch/ElasticFilterStep";
+import NewFilterStep from "../../../src/modules/AdvancedSearch/NewFilterStep";
 
 export default function CreateMonitoringPage() {
   const dispatch = useAppDispatch();

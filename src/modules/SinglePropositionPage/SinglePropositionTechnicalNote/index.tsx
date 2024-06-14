@@ -10,21 +10,21 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import Button from "@observatorio-brasil/atores/src/components/Button";
-import Form from "@observatorio-brasil/atores/src/components/RHF/Form";
-import TextInput from "@observatorio-brasil/atores/src/components/RHF/TextInput";
+import Button from "../../../../src/components/Button";
+import Form from "../../../../src/components/RHF/Form";
+import TextInput from "../../../../src/components/RHF/TextInput";
 import { useForm } from "react-hook-form";
-import PrioritySelect from "@observatorio-brasil/atores/src/components/Select/PrioritySelect";
+import PrioritySelect from "../../../../src/components/Select/PrioritySelect";
 import { PlusCircleOutlined } from "@ant-design/icons";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
+} from "../../../../src/store/hooks";
 import {
   selectTechnicalNote,
   TechnicalNoteActions,
-} from "@observatorio-brasil/atores/src/store/slices/nota-tecnica";
-import { Loading } from "@observatorio-brasil/atores/src/components/Loading";
+} from "../../../../src/store/slices/nota-tecnica";
+import { Loading } from "../../../../src/components/Loading";
 
 interface Props {
   technicalNotes: NotaTecnica[];

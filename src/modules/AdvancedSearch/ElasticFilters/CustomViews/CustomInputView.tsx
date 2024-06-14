@@ -1,5 +1,5 @@
 import React from "react";
-import theme from "@observatorio-brasil/atores/src/theme";
+import theme from "../../../../../src/theme";
 import { InputViewProps } from "@elastic/react-search-ui-views";
 
 export const CustomInputView = ({

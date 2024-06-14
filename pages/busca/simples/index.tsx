@@ -1,27 +1,27 @@
 import React from "react";
 import { useCallback, useEffect, useState } from "react";
 import { HStack, Text, VStack, Box, Select } from "@chakra-ui/react";
-import ElasticFilters from "@observatorio-brasil/atores/src/modules/AdvancedSearch/ElasticFilters";
+import ElasticFilters from "../../../src/modules/AdvancedSearch/ElasticFilters";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
+} from "../../../src/store/hooks";
 import {
   FormActions,
   selectSimpleSearchForm,
-} from "@observatorio-brasil/atores/src/store/slices/forms/simpleSearchForm";
-import { useElasticSimpleConfig } from "@observatorio-brasil/atores/src/modules/AdvancedSearch/ElasticFilters/config/simple";
-import { getHouses } from "@observatorio-brasil/atores/src/api/services/houses";
+} from "../../../src/store/slices/forms/simpleSearchForm";
+import { useElasticSimpleConfig } from "../../../src/modules/AdvancedSearch/ElasticFilters/config/simple";
+import { getHouses } from "../../../src/api/services/houses";
 import {
   selectHouse,
   HouseActions,
-} from "@observatorio-brasil/atores/src/store/slices/proposition/house";
-import InputBubbles from "@observatorio-brasil/atores/src/components/RHF/InputBubbles";
-import TextInput from "@observatorio-brasil/atores/src/components/RHF/TextInput";
+} from "../../../src/store/slices/proposition/house";
+import InputBubbles from "../../../src/components/RHF/InputBubbles";
+import TextInput from "../../../src/components/RHF/TextInput";
 import { useForm, useWatch } from "react-hook-form";
-import PageWrapper from "@observatorio-brasil/atores/src/components/PageWrapper";
-import Form from "@observatorio-brasil/atores/src/components/RHF/Form";
-import { useDebounce } from "@observatorio-brasil/atores/src/hooks/useDebounce";
+import PageWrapper from "../../../src/components/PageWrapper";
+import Form from "../../../src/components/RHF/Form";
+import { useDebounce } from "../../../src/hooks/useDebounce";
 
 interface DebounceFilterProps {
   control: any;

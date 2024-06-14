@@ -1,12 +1,12 @@
 import { CloseOutlined, PlusOutlined } from "@ant-design/icons";
 import { HStack, Select, Text, VStack } from "@chakra-ui/react";
-import { HouseInterface } from "@observatorio-brasil/atores/src/api/services/houses/interfaces/house.interface";
-import Bubble from "@observatorio-brasil/atores/src/components/Bubble";
+import { HouseInterface } from "../../../../../src/api/services/houses/interfaces/house.interface";
+import Bubble from "../../../../../src/components/Bubble";
 import {
   HouseOption,
   LegislativeHousesStepInput,
-} from "@observatorio-brasil/atores/src/store/slices/forms/advancedSearchForm";
-import theme from "@observatorio-brasil/atores/src/theme";
+} from "../../../../../src/store/slices/forms/advancedSearchForm";
+import theme from "../../../../../src/theme";
 import { useEffect, useState } from "react";
 import { UseFormReturn } from "react-hook-form";
 

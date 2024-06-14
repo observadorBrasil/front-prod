@@ -1,9 +1,9 @@
 import React from "react";
 import { VStack } from "@chakra-ui/react";
 import { Control, UseFormReturn } from "react-hook-form";
-import { LegislativeHousesStepInput } from "@observatorio-brasil/atores/src/store/slices/forms/advancedSearchForm";
-import { HouseInterface } from "@observatorio-brasil/atores/src/api/services/houses/interfaces/house.interface";
-import CheckboxGroup from "@observatorio-brasil/atores/src/components/RHF/CheckboxGroup";
+import { LegislativeHousesStepInput } from "../../../../../src/store/slices/forms/advancedSearchForm";
+import { HouseInterface } from "../../../../../src/api/services/houses/interfaces/house.interface";
+import CheckboxGroup from "../../../../../src/components/RHF/CheckboxGroup";
 
 interface Props {
   formProps: UseFormReturn<LegislativeHousesStepInput, any>;

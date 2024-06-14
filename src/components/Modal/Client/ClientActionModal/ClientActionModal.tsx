@@ -17,19 +17,19 @@ import Form from '../../../RHF/Form'
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form'
-import { useAppSelector } from '@observatorio-brasil/atores/src/store/hooks'
+import { useAppSelector } from '../../../../../src/store/hooks'
 import { useDispatch } from 'react-redux'
-import { FormsActions } from '@observatorio-brasil/atores/src/store/slices/forms'
+import { FormsActions } from '../../../../../src/store/slices/forms'
 import dayjs from 'dayjs'
 import {
   createClient,
   updateClient,
-} from '@observatorio-brasil/atores/src/api/services/clients'
+} from '../../../../../src/api/services/clients'
 import { toast } from 'react-toastify'
 import {
   selectClientModal,
   onClose,
-} from '@observatorio-brasil/atores/src/store/slices/clientModal'
+} from '../../../../../src/store/slices/clientModal'
 import ChakraInput from '../../../CrakraInput/ChakraInput'
 import Image from 'next/image'
 import ShadowLogo from '../../../../assets/image-svgrepo-com 1.png'

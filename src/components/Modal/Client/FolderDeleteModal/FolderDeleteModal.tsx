@@ -16,12 +16,12 @@ import { Folder } from '@prisma/client'
 import {
   deleteFolder,
   getFolder,
-} from '@observatorio-brasil/atores/src/api/services/folders'
+} from '../../../../../src/api/services/folders'
 import Form from '../../../RHF/Form'
 import { useDispatch, useSelector } from 'react-redux'
 import { onCloseDeleteModal } from '../../../../store/slices/clientFolderDeleteModal/index'
 import { Loading } from '../../../Loading'
-import { FolderActions } from '@observatorio-brasil/atores/src/store/slices/folder'
+import { FolderActions } from '../../../../../src/store/slices/folder'
 
 interface FolderFormInput {
   name: string

@@ -6,17 +6,17 @@ import Form from "../../../components/RHF/Form";
 import TextInput from "../../../components/RHF/TextInput";
 import PrioritySelect from "../../../components/Select/PrioritySelect";
 import { useForm } from "react-hook-form";
-import TextAreaInput from "@observatorio-brasil/atores/src/components/RHF/TextAreaInput";
+import TextAreaInput from "../../../../src/components/RHF/TextAreaInput";
 import { DownOutlined } from "@ant-design/icons";
 import {
   useAppDispatch,
   useAppSelector,
-} from "@observatorio-brasil/atores/src/store/hooks";
+} from "../../../../src/store/hooks";
 import {
   selectTechnicalNote,
   TechnicalNoteActions,
-} from "@observatorio-brasil/atores/src/store/slices/nota-tecnica";
-import { Loading } from "@observatorio-brasil/atores/src/components/Loading";
+} from "../../../../src/store/slices/nota-tecnica";
+import { Loading } from "../../../../src/components/Loading";
 
 interface Props {
   techincalNote: NotaTecnica;
