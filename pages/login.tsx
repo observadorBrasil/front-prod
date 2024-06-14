@@ -37,15 +37,7 @@ export default function LoginPage() {
 //   }, [userState, router])
 
   return (
-    <PageWrapper
-      containerProps={{
-        pl: 0,
-        pr: 0,
-        pt: 0,
-        h: '100vh',
-        w: '100vh'
-      }}
-    >
+    <PageWrapper>
       <div className="w-full h-screen flex">
         <div
           className={`${styles.styleLoginBgImageArea} hidden md:w-1/2 md:flex items-center justify-center w-full`}

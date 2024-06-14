@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import LogoIcon from '../../../public/images/iconLogo.svg'
-import { UserActions } from '../../../src/store/slices/user'
+import { selectUser, UserActions } from '../../../src/store/slices/user'
 import Form from '../../../src/components/RHF/Form'
 import ChakraInput from '../../../src/components/CrakraInput/ChakraInput'
 import ChakraFormLabel from '../../../src/components/ChakraFormLabel/ChakraFormLabel'
@@ -11,7 +11,7 @@ import { Button, InputGroup, InputRightElement } from '@chakra-ui/react'
 import { FaEyeSlash, FaEye } from 'react-icons/fa'
 import { z } from 'zod'
 
-import { useAppDispatch } from '../../store/hooks'
+import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import Image from 'next/image'
@@ -32,6 +32,7 @@ export type loginSchema = z.infer<typeof schema>
 function LoginForm() {
   const router = useRouter()
   const dispatch = useAppDispatch()
+  const { user } = useAppSelector(selectUser)
   const [showPassword, setShowPassword] = useState(false)
 
   const handleEyeClick = () => setShowPassword(!showPassword)
@@ -43,6 +44,12 @@ function LoginForm() {
   } = useForm({
     resolver: zodResolver(schema),
   })
+
+  useEffect(() => { 
+    if (user !== null && user !== undefined) {
+      router.push('/')
+    }
+  }, [user, router])
 
   return (
     <div className="md:w-1/2 md:static mx-auto">

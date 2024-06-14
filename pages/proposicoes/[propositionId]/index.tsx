@@ -91,7 +91,9 @@ export default function SinglePropositionPage({
 
   return (
     // Go Back para Busca Avançada feita na gamby
-    <PageWrapper presentGoBack restricted overrideGoBack={goBack}>
+    <PageWrapper presentGoBack restricted
+      overrideGoBack={goBack}
+    >
       <Stack
         direction={{ base: "column" }}
         align={{ base: "flex-start" }}
@@ -214,3 +216,4 @@ export default function SinglePropositionPage({
     </PageWrapper>
   );
 }
+

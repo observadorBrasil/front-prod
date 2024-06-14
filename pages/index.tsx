@@ -26,7 +26,6 @@ import DonutArea from '../src/components/DonutDashArea/DonutArea/DonutArea'
 import Dashboard from '../src/patterns/Dashboard'
 import { getActiveSearches } from '@observatorio-brasil/atores/src/api/services/search'
 import { useAppDispatch } from '@observatorio-brasil/atores/src/store/hooks'
-
 // https://github.com/nrwl/nx/issues/9017#issuecomment-1180462040
 // import path from 'path'
 // path.resolve('./next.config.js')
@@ -52,6 +51,7 @@ export default function DashboardPage() {
   const [donutOne, setDonutOne] = useState(false)
   const [donutTwo, setDonutTwo] = useState(false)
   const [columns, setColumns] = useState<Array<any>>([])
+  const [recordKey, setRecordKey] = useState(null)
   // const [columnsPropositions, setColumnsPropositions] = useState<Array<any>>([])
   const toast = useToast()
   const [selectedFolder, setSelectedFolder] = useState<ResultProps>({
@@ -80,6 +80,12 @@ export default function DashboardPage() {
   const [clients, setClients] = useState<ClientInterface[]>([])
 
   const [is2XL, setIs2XL] = useState(false)
+
+  useEffect(() => {
+    if (window !== undefined && recordKey && recordKey !== null) {
+      router.push('/proposicoes/' + recordKey)
+    }
+  }, [recordKey, router])
 
   useEffect(() => {
     const handleResize = () => {
@@ -142,15 +148,14 @@ export default function DashboardPage() {
       title: 'Ações',
       dataIndex: 'actions',
       key: 'actions',
-      render: (text: any, record: Search) => (
+      render: (text: any, record: any) => (
         <div className="flex gap-4 ml-auto">
           <Image
             src={EyeIcon}
             alt="ícone de edição"
             width={20}
             onClick={() => {
-              setActionLoading(true)
-              router.push(`/monitoramento/resultados/${record.id}`)
+              setRecordKey(record.key)
             }}
             className="cursor-pointer"
           ></Image>
