@@ -1,24 +1,23 @@
-import React, { useEffect } from 'react'
-import styles from './login.module.css'
+import React, { useEffect } from "react";
+import styles from "./login.module.css";
 
-import Image from 'next/image'
-// import IncompleteLogo from '../src/assets/incompleteLogo.svg'
-import NewLogo from '../public/images/newlogo-removebg-preview.png'
+import Image from "next/image";
+import NewLogo from "../public/images/newlogo-removebg-preview.png";
 
-import { useAppSelector } from '../src/store/hooks'
-import { selectUser } from '../src/store/slices/user'
-import PageWrapper from '../src/components/PageWrapper'
-import { useRouter } from 'next/router'
+import { useAppSelector } from "../src/store/hooks";
+import { selectUser } from "../src/store/slices/user";
+import PageWrapper from "../src/components/PageWrapper";
+import { useRouter } from "next/router";
 
 // import { useAuth } from '../src/context/auth'
-import LoginForm from '../src/modules/LoginForm/LoginForm'
+import LoginForm from "../src/modules/LoginForm/LoginForm";
 
 // cleid:A= Exemplo-New-Way-01
 
 export default function LoginPage() {
-  const userState = useAppSelector(selectUser)
-  const router = useRouter()
-//   const { getAuthUserByEmail } = useAuth()
+  const userState = useAppSelector(selectUser);
+  const router = useRouter();
+  //   const { getAuthUserByEmail } = useAuth()
 
   // useEffect(() => {
   //   if (userState.user) {
@@ -28,16 +27,23 @@ export default function LoginPage() {
   //   }
   // }, [userState, router])
 
-//   useEffect(() => {
-//     if (userState.user) {
-//       getAuthUserByEmail(userState.user.email)
+  //   useEffect(() => {
+  //     if (userState.user) {
+  //       getAuthUserByEmail(userState.user.email)
 
-//       router.push('/')
-//     }
-//   }, [userState, router])
+  //       router.push('/')
+  //     }
+  //   }, [userState, router])
 
   return (
-    <PageWrapper>
+    <PageWrapper
+      containerProps={{
+        pl: 0,
+        pr: 0,
+        pt: 0,
+        h: "100vh",
+      }}
+    >
       <div className="w-full h-screen flex">
         <div
           className={`${styles.styleLoginBgImageArea} hidden md:w-1/2 md:flex items-center justify-center w-full`}
@@ -57,5 +63,5 @@ export default function LoginPage() {
         <LoginForm />
       </div>
     </PageWrapper>
-  )
+  );
 }
