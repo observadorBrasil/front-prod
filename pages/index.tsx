@@ -399,9 +399,10 @@ export default function DashboardPage() {
       <Dashboard.Root>
         <Dashboard.Select
           text="Selecione um cliente"
-          options={clientsOptions.map((i) => {
-            return { value: i.label, label: i.label }
-          })}
+          // options={clientsOptions.map((i) => {
+          //   return { value: i.label, label: i.label }
+          // })}
+          options={[{value: "Selecione um cliente", label: 'Selecione um cliente'}]}
           className="max-w-[300px] mb-4"
         />
         <div className="2xl:flex gap-4 justify-between w-full max-w-full overflow-hidden">
