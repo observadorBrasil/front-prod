@@ -8,6 +8,8 @@ import Router from "next/router";
 import { SagaIterator } from "redux-saga";
 import { all, call, put, takeLatest } from "redux-saga/effects";
 import { UserActions } from "../slices/user";
+import { ApiRequestWrapperResponse } from "../../api/interfaces/api-request-wrapper-response.interface";
+import { UserInterface } from "../../api/services/user/interfaces/user.interface";
 
 function* loginUserSaga({
   payload,
@@ -27,12 +29,16 @@ function* loginUserSaga({
 function* registerUserSaga({
   payload,
 }: ReturnType<typeof UserActions.requestUserRegister>): SagaIterator {
-  const res = yield call(createUser, payload);
+  try {
+    const res: ApiRequestWrapperResponse<UserInterface> = yield call(createUser, payload);
 
-  if (res.data) {
-    Router.push("/usuarios");
-    yield put(UserActions.requestUserRegisterSuccess());
-  } else {
+    if (res.data) {
+      Router.push("/usuarios");
+      yield put(UserActions.requestUserRegisterSuccess());
+    } else {
+      yield put(UserActions.requestUserRegisterFailed());
+    }
+  } catch (error) {
     yield put(UserActions.requestUserRegisterFailed());
   }
 }
