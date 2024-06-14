@@ -12,6 +12,7 @@ model User {
     createdAt DateTime @default(now())
     email     String   @unique
     password  String
+    role      String
 }
 
 model Log {
