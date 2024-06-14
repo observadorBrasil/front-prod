@@ -1,0 +1,45 @@
+/* cleid:C= New-Way-Layout-for-Index-Only-Cadastrar-Cliente-Externo */
+.styleExternalCustomerBgImageArea {
+  background-image: url("../../public/images/background-register.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.styleExternalCustomerBgImageArea::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(
+    19,
+    25,
+    49,
+    0.5
+  ); /* Cor #131931 com 50% de opacidade */
+  z-index: 1;
+}
+
+.styleExternalCustomerBgImageArea > * {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .styleExternalCustomerBgImageArea::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(
+      9,
+      25,
+      49,
+      0.774
+    ); /* Cor #091931 com 50% de opacidade */
+    z-index: 1;
+  }
+}
