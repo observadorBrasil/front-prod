@@ -3,16 +3,16 @@ import { LinkOutlined, DeleteOutlined } from "@ant-design/icons";
 import { Badge, Tooltip } from "@chakra-ui/react";
 import { ColumnDef } from "@tanstack/react-table";
 import { formatDate } from "../../../../src/utils/date";
-import { SearchResultInterface } from "../../../../src/src/api/services/search-result/interfaces/search-result.interface";
-import { Loading } from "../../../../src/src/components/Loading";
+import { SearchResultInterface } from "../../../../src/api/services/search-result/interfaces/search-result.interface";
+import { Loading } from "../../../../src/components/Loading";
 import {
   useAppDispatch,
   useAppSelector,
-} from "../../../../src/src/store/hooks";
+} from "../../../../src/store/hooks";
 import {
   SearchResultActions,
   selectSearchResult,
-} from "../../../../src/src/store/slices/search-result";
+} from "../../../../src/store/slices/search-result";
 import Link from "next/link";
 
 const searchStatusColors = {

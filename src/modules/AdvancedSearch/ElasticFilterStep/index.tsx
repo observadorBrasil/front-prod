@@ -4,15 +4,15 @@ import {
   createSearch,
   updateSearch,
 } from "../../../../src/api/services/search";
-import { Loading } from "../../../..src/components/Loading";
+import { Loading } from "../../../../src/components/Loading";
 import {
   useAppDispatch,
   useAppSelector,
-} from "../../../..src/store/hooks";
+} from "../../../../src/store/hooks";
 import {
   FormActions,
   selectAdvancedSearchForm,
-} from "../../../..src/store/slices/forms/advancedSearchForm";
+} from "../../../../src/store/slices/forms/advancedSearchForm";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { StepButton } from "../AdvancedSearchFiltersStep/StepButton";
