@@ -52,7 +52,7 @@ export default function ClientsPage() {
   }, [debouncedSearch]);
 
   const redirectToCreateFilter = () => {
-    router.push("monitoramento/cadastrar");
+    router.push("clientes/cadastrar");
   };
 
   useEffect(() => {
