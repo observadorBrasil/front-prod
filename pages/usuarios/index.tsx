@@ -1,21 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import { Center, Stack, Text } from "@chakra-ui/react";
 import { getAllUsers } from "../../src/api/services/user";
 import { UserInterface } from "../../src/api/services/user/interfaces/user.interface";
 import Button from "../../src/components/Button";
-import DataTable from "../../src/components/DataTable/DataTable";
+import { Table } from "antd";
 import Link from "../../src/components/Link";
 import { Loading } from "../../src/components/Loading";
 import PageWrapper from "../../src/components/PageWrapper";
 import columns from "../../src/modules/UsersPage/Datatable/columns";
 import { useAppSelector } from "../../src/store/hooks";
-import { selectUser } from "../../src/store/slices/user";
-import { useEffect, useState } from "react";
+import { selectUser, UserActions } from "../../src/store/slices/user";
+import { ColumnsType } from "antd/es/table";
+import { DeleteOutlined } from "@ant-design/icons";
+import { store } from "@observatorio-brasil/atores/src/store";
 
 const UsersPage = () => {
-  const [loading, setLoading] = useState<boolean>();
+  const [loading, setLoading] = useState<boolean>(false);
   const [users, setUsers] = useState<UserInterface[]>([]);
   const userState = useAppSelector(selectUser);
+
+  const columns: ColumnsType<UserInterface> = [
+  {
+    title: "Email",
+    dataIndex: "email",
+    key: "email",
+  },
+  {
+    title: "Excluir",
+    key: "action",
+    render: (_, record) => {
+      const userId = record.id;
+      return userState.currentDeletingUserId === userId && userState.loading ? (
+        <Loading />
+      ) : (
+        <DeleteOutlined
+          onClick={() =>
+            store.dispatch(
+              UserActions.requestUserDelete({ userId: record.id })
+            )
+          }
+          style={{ fontSize: 22 }}
+        />
+      );
+    },
+  },
+];
 
   const fetchUsers = async () => {
     if (loading) return;
@@ -29,13 +58,12 @@ const UsersPage = () => {
 
   useEffect(() => {
     if (users.length === 0) fetchUsers();
-  });
+  }, [users]);
 
   useEffect(() => {
     if (!userState.loading && !userState.currentDeletingUserId) {
       fetchUsers();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userState.loading, userState.currentDeletingUserId]);
 
   return (
@@ -59,7 +87,14 @@ const UsersPage = () => {
           <Loading />
         </Center>
       ) : (
-        <DataTable size="lg" columns={columns} data={users} />
+          <Table
+          className="w-full"
+          columns={columns}
+          dataSource={users}
+          rowKey={(record) => record.id}
+          pagination={{ pageSize: 10 }}
+          locale={{ emptyText: "Sem resultados relevantes" }}
+        />
       )}
     </PageWrapper>
   );
