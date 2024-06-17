@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Table,
   Thead,
@@ -11,17 +11,16 @@ import {
 } from "@chakra-ui/react";
 import {
   ColumnDef,
-  FilterFnOption,
   flexRender,
+  useReactTable,
   getCoreRowModel,
+  getPaginationRowModel,
+  getFilteredRowModel,
+  getSortedRowModel,
   getFacetedRowModel,
   getFacetedUniqueValues,
-  getFilteredRowModel,
-  getPaginationRowModel,
-  getSortedRowModel,
-  useReactTable,
+  FilterFnOption,
 } from "@tanstack/react-table";
-import { useEffect } from "react";
 import { Pagination } from "./Pagination";
 
 export type DataTableProps<Data extends object> = {
@@ -86,6 +85,8 @@ export default function DataTable<Data extends object>({
           ? "none"
           : "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",
         width: "100%",
+        height: "100%", // Adicionado para ocupar 100% da altura do contêiner pai
+        overflowY: "auto", // Adicionado para permitir rolagem vertical
       }}
     >
       {data?.length === 0 && <Center h="100px">{noDataPlaceholder}</Center>}

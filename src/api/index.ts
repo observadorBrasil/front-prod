@@ -26,8 +26,8 @@ export class ApiRepository {
     const url: string = baseApiUrl
       ? `${baseApiUrl}${baseUrl}`
       : // process.env.NODE_ENV === "development" ?
-        // `http://localhost:5001/api${baseUrl}` :
-        //`https://monitoring-proposition-api.azurewebsites.net/api${baseUrl}`
+        // `http://localhost:5001/api${baseUrl}`
+        // `https://monitoring-proposition-api.azurewebsites.net/api${baseUrl}`
       `https://observador-api-new.azurewebsites.net/api${baseUrl}`
       
 

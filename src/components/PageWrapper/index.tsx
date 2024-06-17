@@ -21,18 +21,16 @@ interface Props {
 
 const PageWrapper = (props: Props) => {
   const { children, restricted, presentGoBack, overrideGoBack } = props;
-  const [isLoginPage, setIsLoginPage] = useState(false)
-  const [isDashboardPage, setIsDashboardPage] = useState(false)
+  const [isLoginPage, setIsLoginPage] = useState(false);
+  const [isDashboardPage, setIsDashboardPage] = useState(false);
   const userState = useAppSelector(selectUser);
   const router = useRouter();
 
   useEffect(() => {
     if (router.pathname === '/') {
-      console.log('router.pathname', router.pathname)
-
-      setIsDashboardPage(true)
+      setIsDashboardPage(true);
     } else {
-      setIsDashboardPage(false)
+      setIsDashboardPage(false);
     }
 
     if (
@@ -40,15 +38,11 @@ const PageWrapper = (props: Props) => {
       router.pathname === '/external-customer-register' ||
       router.pathname === '/recover-password'
     ) {
-      setIsLoginPage(true)
+      setIsLoginPage(true);
     } else {
-      setIsLoginPage(false)
+      setIsLoginPage(false);
     }
-  }, [router])
-
-  useEffect(() => {
-    console.log('isDashboardPage', isDashboardPage)
-  }, [isDashboardPage])
+  }, [router]);
 
   useEffect(() => {
     if (restricted && !userState.user) {
@@ -57,17 +51,17 @@ const PageWrapper = (props: Props) => {
   }, [restricted, userState.user, router]);
 
   return (
-     <section
+    <section
       className={`${!isLoginPage ? 'wrapperSection bg-aditional-background-color pt-4 lg:pt-0 h-screen' : null}`}
     >
-      <div className={`${!isLoginPage ? 'wrapperDivOne lg:flex' : null}`}>
+      <div className={`${!isLoginPage ? 'wrapperDivOne lg:flex h-full' : null}`}>
         {userState.user && <Navbar />}
         <div
-          className={`${!isLoginPage ? 'wrapperDivTwo mx-3 lg:ml-0 lg:w-full mt-0 lg:mt-3 lg:mr-3' : null} `}
+          className={`${!isLoginPage ? 'wrapperDivTwo mx-3 lg:ml-0 lg:w-full mt-0 lg:mt-3 lg:mr-3 flex flex-col h-full' : null}`}
         >
           {userState.user && <Header />}
           <VStack
-            className={`${!isLoginPage ? `mt-3 pt-4 pb-4 w-full items-center rounded-xl ${!isDashboardPage ? 'bg-white px-4 lg:px-6 overflow-auto min-h-screen max-h-screen lg:min-h-[838px] lg:max-h-[838px]' : 'vstack px-0 lg:px-0 lg:mt-0'}` : null}`}
+            className={`${!isLoginPage ? `overflow-auto pt-4 mt-3 w-full items-center rounded-xl ${!isDashboardPage ? 'bg-white px-4 lg:px-6 max-h-screen flex-grow' : 'vstack px-0 lg:px-0 lg:mt-0 h-full overflow-auto'}` : null}`}
             {...props.containerProps}
           >
             {presentGoBack && (

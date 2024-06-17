@@ -29,7 +29,7 @@ const DonutArea =({
   actionLoading,
 }: DonutAreaProps) => {
   return (
-    <div className="mt-5 mb-5 relative">
+    <div className="mt-5 mb-5 relative h-[90%]">
       <Select
         onChange={(e) => handleGetPl(e!.value, e!.label)}
         options={searches.map((s) => {

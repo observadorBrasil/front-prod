@@ -468,23 +468,27 @@ export default function DashboardPage() {
         </div>
 
         <div className="2xl:w-full h-full xl:flex-col 2xl:flex 2xl:flex-row gap-4 mt-4">
-          <div className="xl:w-full 2xl:w-1/3 mb-4 2xl:mb-0 bg-white rounded-xl">
-            <div className="xl:max-h-[300px] 2xl:max-h-full overflow-auto xl:pb-3 2xl:h-full w-full mt-4">
-              <Table
-                columns={columnsWithSelect}
-                dataSource={selectedFolder.data.slice(0, 200)}
-                size="small"
-                rowKey="key"
-                className="xl:max-h-[300px] 2xl:max-h-full rounded-xl"
-                {...(is2XL && { scroll: { x: 'max-content', y: 400 } })}
-              />
-            </div>
-          </div>
+          <div className="md:w-full xl:w-full 2xl:w-1/3 mb-4 2xl:mb-0 bg-white rounded-xl h-full flex flex-col">
+           <div className="md:w-full xl:pb-3 w-full mt-4 flex-grow flex flex-col overflow-hidden">
+          <Table
+            columns={columnsWithSelect}
+            dataSource={selectedFolder.data.slice(0, 200)}
+            size="small"
+            rowKey="key"
+            className="flex-grow rounded-xl w-[99%]"
+            scroll={{
+              x: 'max-content',
+              y: 'calc(100vh - 300px)', // Ajuste conforme necessário para reservar espaço para outros elementos
+            }}
+            pagination={{ position: ['bottomRight'] }} // Para fixar o rodapé (paginação)
+          />
+        </div> 
+        </div>
 
-          <div className="xl:w-full 2xl:w-2/3 gap-4 flex flex-col">
-            <div className="bg-white h-[248px] w-full rounded-xl">
+          <div className="xl:w-full 2xl:w-2/3 gap-4 flex flex-col justify-between">
+            <div className="bg-white h-full w-full rounded-xl">
               <BarChart></BarChart>
-            </div>
+            </div> 
             <div className="bg-white pb-6 h-[340px] w-full rounded-xl flex justify-around">
               <DonutArea
                 searches={searches}

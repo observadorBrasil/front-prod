@@ -38,7 +38,7 @@ const BarChart = () => {
   if (!mounted) return null
 
   return (
-    <div className="2xl:max-w-[96%] xxl:max-w-[99%] h-full">
+    <div className="2xl:max-w-[96%] xxl:max-w-[99%] h-full md:min-h-[340px]">
       <Chart
         options={options}
         series={series}
