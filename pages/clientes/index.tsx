@@ -93,13 +93,13 @@ export default function ClientsPage() {
           borderColor={"primary"}
           backgroundColor={"transparent"}
           fontSize={"sm"}
-          h={"100%"}
+          h={"40px"}
           px={10}
           py={"4px"}
         >
           {isLargerThan450
-            ? "Cadastrar filtro monitorado"
-            : "+ filtro monitorado"}
+            ? "Cadastrar Cliente"
+            : "+ Cadastrar Cliente"}
         </Button>
       </HStack>
       {isLoading ? (
