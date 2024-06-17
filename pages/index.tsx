@@ -475,10 +475,10 @@ export default function DashboardPage() {
             dataSource={selectedFolder.data.slice(0, 200)}
             size="small"
             rowKey="key"
-            className="flex-grow rounded-xl w-[99%]"
+            className="flex-grow rounded-xl w-[98%]"
             scroll={{
               x: 'max-content',
-              y: 'calc(100vh - 300px)', // Ajuste conforme necessário para reservar espaço para outros elementos
+              y: 'calc(100vh - 340px)', // Ajuste conforme necessário para reservar espaço para outros elementos
             }}
             pagination={{ position: ['bottomRight'] }} // Para fixar o rodapé (paginação)
           />
