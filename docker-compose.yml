@@ -4,7 +4,7 @@ services:
   app:
     build: .
     ports:
-      - "3000:3000"
+      - "3001:3000"  # Mapeando a porta 3000 do contêiner para a porta 3001 no host
     environment:
       NODE_ENV: production
     volumes:

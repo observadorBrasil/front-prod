@@ -11,6 +11,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
+        lg1058: '1058px',
         xxl: '1800px', // Novo breakpoint adicionado
       },
       colors: {

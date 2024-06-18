@@ -20,7 +20,7 @@ export class ApiRepository {
   private createApiInstance(baseUrl: string) {
     const baseApiUrl: string | undefined =
       //   process.env.NEXT_PUBLIC_MONITORING_DEVELOPMENT_API_URL
-    process.env.NEXT_PUBLIC_MONITORING_API_URL
+    process.env.NEXT_PUBLIC_MONITORING_API_DEV_URL
     // 'https://observador-api-new.azurewebsites.net/api'
 
     const url: string = baseApiUrl
