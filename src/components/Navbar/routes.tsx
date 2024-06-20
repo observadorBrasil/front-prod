@@ -2,6 +2,8 @@ import React, { ReactNode } from 'react'
 import { IoPeople, IoSearch } from 'react-icons/io5'
 import { MdDashboard, MdPerson } from 'react-icons/md'
 import { TbHeartRateMonitor } from 'react-icons/tb'
+import { TbWorldShare } from "react-icons/tb";
+
 
 export interface NavItem {
   label: string
@@ -55,6 +57,11 @@ const routes: Array<NavItem> = [
     label: 'Usuários',
     href: '/usuarios',
     icon: <MdPerson />,
+  },
+   {
+    label: 'Atores',
+    href: 'https://atores.azurewebsites.net/login',
+    icon: <TbWorldShare />,
   },
 ]
 
