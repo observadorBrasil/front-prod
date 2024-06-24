@@ -10,7 +10,7 @@ export const host: string = Boolean(baseApiUrl) ?
     `${baseApiUrl}/elasticsearch` :
     process.env.NODE_ENV === "development" ?
         `http://localhost:5001/api/elasticsearch` :
-        `https://monitoring-proposition-api.azurewebsites.net/api/elasticsearch`;
+        `https://observador-api-new.azurewebsites.net/api/elasticsearch`;
 
 export const search_fields: SearchFields = {
   // id: {},
