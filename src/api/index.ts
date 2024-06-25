@@ -27,8 +27,7 @@ export class ApiRepository {
       ? `${baseApiUrl}${baseUrl}`
       : // process.env.NODE_ENV === "development" ?
         // `http://localhost:5001/api${baseUrl}`
-        // `https://monitoring-proposition-api.azurewebsites.net/api${baseUrl}`
-      `https://observador-api-new.azurewebsites.net/api${baseUrl}`
+        `https://observador-api-new.azurewebsites.net/api${baseUrl}`
       
 
     const api = Axios.create({

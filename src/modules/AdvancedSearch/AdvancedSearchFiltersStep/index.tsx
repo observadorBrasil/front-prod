@@ -323,7 +323,7 @@ const AdvancedSearchFiltersStep = () => {
             removeBubble={handleRemoveSituation}
           />
 
-          <Text color={"black"} fontSize={"2xl"} fontWeight={"semibold"}>
+          {/* <Text color={"black"} fontSize={"2xl"} fontWeight={"semibold"}>
             Período
           </Text>
           <Stack
@@ -345,8 +345,8 @@ const AdvancedSearchFiltersStep = () => {
               label={"Fim"}
               type={"date"}
               rhfregister={register("finalDate")}
-            />
-          </Stack>
+            /> 
+          </Stack>*/}
         </VStack>
       </Form>
       <HStack py={"2%"} px={"2%"} justifyContent={"flex-end"} w={"full"}>

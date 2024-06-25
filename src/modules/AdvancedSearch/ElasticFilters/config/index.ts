@@ -3,7 +3,7 @@ import { FilterType, Filter } from "@elastic/search-ui";
 import { ResultFields, SearchFields } from "../types";
 import { QueryDslQueryContainer } from "@elastic/elasticsearch/lib/api/types";
 
-const baseApiUrl: string | undefined = process.env.NEXT_PUBLIC_MONITORING_API_URL;
+const baseApiUrl: string | undefined = process.env.NEXT_PUBLIC_MONITORING_API_DEV_URL;
 
 export const index = "propositions";
 export const host: string = Boolean(baseApiUrl) ?

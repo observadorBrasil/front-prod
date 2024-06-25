@@ -1,3 +1,4 @@
+import React from "react";
 import { CloseOutlined, PlusOutlined } from "@ant-design/icons";
 import { HStack, Select, Text, VStack } from "@chakra-ui/react";
 import { HouseInterface } from "../../../../../src/api/services/houses/interfaces/house.interface";
