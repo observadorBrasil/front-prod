@@ -23,10 +23,19 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { onOpenDeleteModal } from '../../src/store/slices/monitoringDeleteModal';
 import MonitoringDeleteModal from 'src/components/Modal/Monitoring/MonitoringDeleteModal/MonitoringDeleteModal'
+import { Search } from '@prisma/client';
+import { createMockSearch } from '@observatorio-brasil/atores/database';
 const MonitoringPage = () => {
   const router = useRouter()
   const dispatch = useAppDispatch();
   const { searches, loading, currentUpdatingSearchId } = useAppSelector(selectSearch);
+  const [newSearches, setNewSearches] = useState<Search[] | null>(null)
+
+  useEffect(() => {
+    const mockSearch = createMockSearch()
+    setNewSearches([...searches, mockSearch])
+  }, [searches])
+
   // const columns = useSearchColumns();
   const [columns, setColumns] = useState<Array<any>>([]);
 
@@ -185,7 +194,7 @@ const MonitoringPage = () => {
             <div className="h-full w-full mt-4">
             <Table
                 columns={columns}
-                dataSource={searches.slice(0, 6)}
+                dataSource={newSearches?.slice(0, 6)}
                 size="small"
                 rowKey="id"
               />

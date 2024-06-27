@@ -25,6 +25,7 @@ import { useForm } from "react-hook-form";
 import { Badge, Table, Tooltip } from 'antd';
 import { formatDate } from '@observatorio-brasil/atores/src/utils/date';
 import Link from 'next/link';
+import { resultMockSearch } from '@observatorio-brasil/atores/database';
 
 const defaultValues = {
   search: "",
@@ -53,7 +54,11 @@ const searchStatusColors = {
   Ignorado: { color: "red" },
 } as const;
 
-type SearchStatusKeys = keyof typeof searchStatusColors;
+  type SearchStatusKeys = keyof typeof searchStatusColors;
+  
+  useEffect(() => { 
+    dispatch(SearchResultActions.setLoadingFalse(false))
+  }, [])
 
   const columns = [
     {
@@ -61,7 +66,7 @@ type SearchStatusKeys = keyof typeof searchStatusColors;
       dataIndex: 'searchResultStatus',
       key: 'status',
       render: (status: { description: SearchStatusKeys }) => (
-        <Badge color={searchStatusColors[status.description].color}>
+        <Badge color={searchStatusColors[status.description]?.color}>
           {status.description}
         </Badge>
       ),
@@ -131,8 +136,9 @@ type SearchStatusKeys = keyof typeof searchStatusColors;
               id,
             })
           );
+          dispatch(SearchResultActions.setLoadingFalse(false))
         };
-        return currentUpdatingSearchResultId === id ? (
+        return currentUpdatingSearchResultId === 999 ? ( // Alterado. Troque 999 por 'id'
           <div style={{ textAlign: 'center' }}>
             <Loading />
           </div>
@@ -152,7 +158,7 @@ type SearchStatusKeys = keyof typeof searchStatusColors;
       minWidth: 180,
       render: (_: any, record: SearchResultInterface) => {
         const { id } = record;
-        return currentUpdatingSearchResultId === id ? (
+        return currentUpdatingSearchResultId === 999 ? ( // Alterado. Troque 999 por 'id'
           <div style={{ textAlign: 'center' }}>
             <Loading />
           </div>
@@ -180,7 +186,7 @@ type SearchStatusKeys = keyof typeof searchStatusColors;
       setFilteredResults(searchResults);
       return;
     }
-
+ 
     try {
       setLoadingSearch(true);
       const id = parseInt(searchId!.toString());
@@ -190,18 +196,25 @@ type SearchStatusKeys = keyof typeof searchStatusColors;
       }
     } finally {
       setLoadingSearch(false);
-    }
+      }
+    
+      
   }, [debouncedSearch, searchId, searchResults]);
 
   useEffect(() => {
-    if (searchId) {
+    if (searchId && parseInt(searchId.toString()) !== 999) {
       const id = parseInt(searchId.toString());
       dispatch(SearchResultActions.requestSearchResults({ searchId: id }));
     }
   }, [dispatch, searchId]);
 
   useEffect(() => {
-    handleSearch();
+    if (searchId && parseInt(searchId.toString()) !== 999) {
+      handleSearch();
+    } else {
+      const mockSearch = resultMockSearch()
+      setFilteredResults(mockSearch)
+    }
   }, [debouncedSearch, handleSearch]);
 
   const data = filteredResults || searchResults;

@@ -24,6 +24,9 @@ export const searchResultSlice = createSlice({
     setLoading: (state, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
     },
+    setLoadingFalse: (state, action: PayloadAction<boolean>) => {
+      state.loading =  action.payload;
+    },
     requestSearchResults: (
       state,
       action: PayloadAction<{ searchId: number }>
