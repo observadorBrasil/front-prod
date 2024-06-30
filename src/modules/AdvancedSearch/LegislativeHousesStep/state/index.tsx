@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { CloseOutlined, PlusOutlined } from "@ant-design/icons";
-import { HStack, Select, Text, VStack } from "@chakra-ui/react";
+import { HStack, Checkbox, CheckboxGroup, Text, VStack, Button } from "@chakra-ui/react";
 import { HouseInterface } from "../../../../../src/api/services/houses/interfaces/house.interface";
 import Bubble from "../../../../../src/components/Bubble";
 import {
@@ -8,7 +8,6 @@ import {
   LegislativeHousesStepInput,
 } from "../../../../../src/store/slices/forms/advancedSearchForm";
 import theme from "../../../../../src/theme";
-import { useEffect, useState } from "react";
 import { UseFormReturn } from "react-hook-form";
 
 interface StateHouseOptionsProps {
@@ -19,7 +18,6 @@ interface StateHouseOptionsProps {
 const StateHouseOptions = ({ formProps, houses }: StateHouseOptionsProps) => {
   const { register, watch, setValue } = formProps;
 
-  const currentTypedKeyword = watch("keyword");
   const initialOptions = watch("state.houses");
   const [selectedOptions, setSelectedOptions] = useState<HouseOption[]>(
     initialOptions || []
@@ -39,24 +37,26 @@ const StateHouseOptions = ({ formProps, houses }: StateHouseOptionsProps) => {
     setValue("state.houseIds", houseIds);
   }, [selectedOptions, setValue]);
 
-  const addKeyword = () => {
-    const option = options.find((o) => o.value === currentTypedKeyword);
-    if (option === undefined) return;
-
-    const newSelectedOptions = [...selectedOptions, option];
+  const handleCheckboxChange = (checkedValues: any[]) => {
+    const newSelectedOptions = options.filter((o) =>
+      checkedValues.includes(o.value)
+    );
     setSelectedOptions(newSelectedOptions);
-    setValue("keyword", "");
   };
 
-  const removeKeyword = (k: number) => {
-    const kIdx = selectedOptions.findIndex((ck) => ck.id === k);
-    if (kIdx >= 0) {
-      const newKeywords = [...selectedOptions];
-      newKeywords.splice(kIdx, 1);
-      setSelectedOptions(newKeywords);
-    }
+  const selectAll = () => {
+    setSelectedOptions(options);
   };
 
+  const clearSelection = () => {
+    setSelectedOptions([]);
+  };
+
+  const removeKeyword = (id: number) => {
+    const newSelectedOptions = selectedOptions.filter((o) => o.id !== id);
+    setSelectedOptions(newSelectedOptions);
+  };
+  
   return (
     <VStack w={"full"} align={"flex-start"} justify={"space-between"} px={"5%"}>
       <HStack
@@ -65,23 +65,21 @@ const StateHouseOptions = ({ formProps, houses }: StateHouseOptionsProps) => {
         align={"center"}
       >
         <Text color={"black"}>Estado</Text>
-        <Select {...register("keyword")}>
-          {options.map((o) => (
-            <option key={o.id} value={o.value}>
-              {o.label}
-            </option>
-          ))}
-        </Select>
-        <PlusOutlined
-          size={20}
-          style={{
-            cursor: "pointer",
-            borderColor: theme.colors.primary,
-            marginLeft: "4%",
-          }}
-          onClick={addKeyword}
-        />
       </HStack>
+      <HStack>
+        <Button onClick={selectAll}>Selecionar Todos</Button>
+        <Button onClick={clearSelection}>Limpar Seleção</Button>
+      </HStack>
+      <CheckboxGroup
+        value={selectedOptions.map((o) => o.value)}
+        onChange={handleCheckboxChange}
+      >
+        {options.map((o) => (
+          <Checkbox key={o.id} value={o.value}>
+            {o.label}
+          </Checkbox>
+        ))}
+      </CheckboxGroup>
       {selectedOptions.length > 0 && (
         <HStack
           w="100%"
