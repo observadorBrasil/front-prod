@@ -405,7 +405,7 @@ export default function DashboardPage() {
           options={[{value: "Selecione um cliente", label: 'Selecione um cliente'}]}
           className="max-w-[300px] mb-4"
         />
-        <div className="2xl:flex gap-4 justify-between w-full max-w-full overflow-hidden">
+        <div className="lg:flex gap-4 justify-between w-full max-w-full overflow-hidden">
           <div className="bg-primary w-full lg:max-w-[100%] mb-5 2xl:mb-0 xl:w-full 2xl:w-1/3 relative h-96 rounded-xl overflow-auto">
             <div className="mt-4 ml-4">
               <h2 className="text-white font-bold text-2xl">
