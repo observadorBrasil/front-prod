@@ -76,7 +76,7 @@ function Header() {
           className="cursor-pointer"
         />
         {isOpen && (
-          <div className="absolute mt-[-11px] flex top-0 right-0 left-0 bottom-0 z-50 w-full h-screen bg-white p-1">
+          <div className="absolute mt-[-11px] flex top-0 right-0 left-0 bottom-0 z-50 w-full h-screen bg-white p-1 overflow-auto">
             <div className="fixed top-3 right-4 z-50">
               <IoCloseSharp
                 size={30}
